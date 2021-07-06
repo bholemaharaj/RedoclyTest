@@ -47,44 +47,44 @@ training:
     expanded: true
     pages:
       - label: Academic Catalogs
-        page: openapi/multiVersion.page.yaml
+        page: custom/dummy.md
       - label: Academic Credentials
-        page: openapi/multiVersion.page.yaml        
+        page: custom/dummy.md
       - label: Academic Disciplines
-        page: openapi/multiVersion.page.yaml        
+        page: custom/dummy.md
       - label: Academic Honors
-        page: openapi/multiVersion.page.yaml        
+        page: custom/dummy.md
       - label: Academic Period Enrollment Statuses
-        page: openapi/multiVersion.page.yaml      
+        page: custom/dummy.md
       - label: Academic Periods
-        page: openapi/multiVersion.page.yaml          
+        page: custom/dummy.md
       - label: Persons
-        page: openapi/multiVersion.page.yaml        
+        page: custom/dummy.md
       - label: Sections
-        page: openapi/multiVersion.page.yaml        
+        page: custom/dummy.md
       - label: Students
-        page: openapi/multiVersion.page.yaml        
+        page: custom/dummy.md
       - label: Section Registrations
-        page: openapi/multiVersion.page.yaml        
+        page: custom/dummy.md
       - label: Vendors
-        page: openapi/multiVersion.page.yaml        
+        page: custom/dummy.md
   - group: Business APIs
     expanded: false
     pages:
       - label: Business API 1
-        page: openapi/multiVersion.page.yaml
+        page: custom/dummy.md
       - label: Business API 2
-        page: openapi/multiVersion.page.yaml        
+        page: custom/dummy.md
       - label: Business API 3
-        page: openapi/multiVersion.page.yaml        
+        page: custom/dummy.md
       - label: Business API 4
-        page: openapi/multiVersion.page.yaml        
+        page: custom/dummy.md
       - label: Business API 5
-        page: openapi/multiVersion.page.yaml      
+        page: custom/dummy.md
       - label: Business API 6
-        page: openapi/multiVersion.page.yaml          
+        page: custom/dummy.md
       - label: Business API 7
-        page: openapi/multiVersion.page.yaml        
+        page: custom/dummy.md
       - label: Business API 8
         page: openapi/multiVersion.page.yaml        
       - label: Business API 9
