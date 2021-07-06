@@ -59,7 +59,9 @@ training:
       - label: Academic Periods
         page: custom/dummy3.md
       - label: Persons
-        page: custom/dummy1.md
+        page: openapi/persons.page.yaml
+      - label: Courses
+        page: openapi/courses.page.yaml
       - label: Sections
         page: custom/dummy2.md
       - label: Students
@@ -87,9 +89,8 @@ training:
         page: custom/dummy1.md
       - label: Business API 8
         page: openapi/multiVersion.page.yaml        
-      - label: Business API 9
-        page: openapi/multiVersion.page.yaml        
       - label: Business API 10
+        page: custom/dummy1.md
 
 
 alternative:
