@@ -6,7 +6,7 @@ meta:
 logo: ./images/logo.png
 enableToc: true
 oasDefinitions:
-  #multiVersion: https://api.redoc.ly/registry/ellucian/persons_courses/V1/bundle/master/openapi.yaml
+  multiVersion: https://api.redoc.ly/registry/ellucian/persons_courses/V1/bundle/master/openapi.yaml
   courses: ./openapi/courses.yaml
   persons: ./openapi/persons.yaml
   petstore: ./openapi/petstore.yaml
