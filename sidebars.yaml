@@ -47,44 +47,44 @@ training:
     expanded: true
     pages:
       - label: Academic Catalogs
-        page: custom/dummy.md
+        page: custom/dummy1.md
       - label: Academic Credentials
-        page: custom/dummy.md
+        page: custom/dummy2.md
       - label: Academic Disciplines
-        page: custom/dummy.md
+        page: custom/dummy3.md
       - label: Academic Honors
-        page: custom/dummy.md
+        page: custom/dummy1.md
       - label: Academic Period Enrollment Statuses
-        page: custom/dummy.md
+        page: custom/dummy2.md
       - label: Academic Periods
-        page: custom/dummy.md
+        page: custom/dummy3.md
       - label: Persons
-        page: custom/dummy.md
+        page: custom/dummy1.md
       - label: Sections
-        page: custom/dummy.md
+        page: custom/dummy2.md
       - label: Students
-        page: custom/dummy.md
+        page: custom/dummy3.md
       - label: Section Registrations
-        page: custom/dummy.md
+        page: custom/dummy1.md
       - label: Vendors
-        page: custom/dummy.md
+        page: custom/dummy2.md
   - group: Business APIs
     expanded: false
     pages:
       - label: Business API 1
-        page: custom/dummy.md
+        page: custom/dummy1.md
       - label: Business API 2
-        page: custom/dummy.md
+        page: custom/dummy2.md
       - label: Business API 3
-        page: custom/dummy.md
+        page: custom/dummy3.md
       - label: Business API 4
-        page: custom/dummy.md
+        page: custom/dummy1.md
       - label: Business API 5
-        page: custom/dummy.md
+        page: custom/dummy2.md
       - label: Business API 6
-        page: custom/dummy.md
+        page: custom/dummy3.md
       - label: Business API 7
-        page: custom/dummy.md
+        page: custom/dummy1.md
       - label: Business API 8
         page: openapi/multiVersion.page.yaml        
       - label: Business API 9
