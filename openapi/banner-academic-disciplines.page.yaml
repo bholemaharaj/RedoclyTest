@@ -1,0 +1,9 @@
+type: reference-docs
+definitionId: bannerAcademicDisciplines
+settings:
+  generateCodeSamples:
+    languages:
+      - lang: curl
+      - lang: JavaScript
+      - lang: Node.js
+  pagination: none

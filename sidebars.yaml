@@ -47,11 +47,11 @@ training:
     expanded: true
     pages:
       - label: Academic Catalogs
-        page: custom/dummy1.md
+        page: openapi/banner-academic-catalogs.page.yaml
       - label: Academic Credentials
-        page: custom/dummy2.md
+        page: openapi/banner-academic-credentials.page.yaml
       - label: Academic Disciplines
-        page: custom/dummy3.md
+        page: openapi/banner-academic-disciplines.page.yaml
       - label: Academic Honors
         page: custom/dummy1.md
       - label: Academic Period Enrollment Statuses
