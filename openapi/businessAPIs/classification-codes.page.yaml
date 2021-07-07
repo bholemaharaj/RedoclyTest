@@ -1,9 +1,0 @@
-type: reference-docs
-definitionId: classificationCodes
-settings:
-  generateCodeSamples:
-    languages:
-      - lang: curl
-      - lang: JavaScript
-      - lang: Node.js
-  pagination: none
