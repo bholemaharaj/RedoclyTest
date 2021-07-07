@@ -1,10 +1,10 @@
 openapi: 3.0.0
 info:
-  title: catalog-element-fours
-  description: API for STVCUDD administrative page
+  title: classification-codes
+  description: API for STVCCSL administrative page
   version: 1.0.0
-  x-source-name: STVCUDD
-  x-source-title: Catalog Element Four Validation
+  x-source-name: STVCCSL
+  x-source-title: Classification Code Validation
   x-source-system: Banner
   x-api-type: Administrative
 servers:
@@ -17,11 +17,11 @@ servers:
 - url: https://integrate.elluciancloud.com.au
   description: Ethos Integration API Asia-Pacific
 paths:
-  /api/catalog-element-fours:
+  /api/classification-codes:
     get:
       tags:
-      - catalog-element-fours
-      summary: Return resources from STVCUDD
+      - classification-codes
+      summary: Return resources from STVCCSL
       parameters:
       - name: limit
         in: query
@@ -51,17 +51,17 @@ paths:
         required: false
         schema:
           type: string
-      - name: criteria.activityDate
+      - name: activityDate
         in: query
         required: false
         schema:
           type: string
-      - name: criteria.code
+      - name: code
         in: query
         required: false
         schema:
           type: string
-      - name: criteria.desc
+      - name: desc
         in: query
         required: false
         schema:
@@ -88,7 +88,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/catalog-element-fours-1.0.0_get'
+                  $ref: '#/components/schemas/classification-codes-1.0.0_get'
         '401':
           description: Failure. Unauthorized
         '500':
@@ -99,11 +99,11 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/errors-2.0.0'
-  /qapi/catalog-element-fours:
+  /qapi/classification-codes:
     post:
       tags:
-      - catalog-element-fours QAPI (Query by POST)
-      summary: Return resources from STVCUDD
+      - classification-codes QAPI (Query by POST)
+      summary: Return resources from STVCCSL
       parameters:
       - name: content type
         in: header
@@ -113,7 +113,7 @@ paths:
             schema:
               type: array
               items:
-                $ref: '#/components/schemas/catalog-element-fours-1.0.0_qapi_post'
+                $ref: '#/components/schemas/classification-codes-1.0.0_qapi_post'
       responses:
         '200':
           description: OK
@@ -136,7 +136,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/catalog-element-fours-1.0.0_get'
+                  $ref: '#/components/schemas/classification-codes-1.0.0_get'
         '401':
           description: Failure. Unauthorized
         '500':
@@ -149,15 +149,33 @@ paths:
                   $ref: '#/components/schemas/errors-2.0.0'
 components:
   schemas:
-    catalog-element-fours-1.0.0_qapi_post:
+    classification-codes-1.0.0_get:
+      required:
+      - code
+      - desc
       type: object
       properties:
-        criteria.activityDate:
+        activityDate:
+          title: Activity Date
+          maxLength: 11
+          pattern: ^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[0-1]|0[1-9]|[1-2][0-9])T(2[0-3]|[0-1][0-9]):([0-5][0-9]):([0-5][0-9])(\.[0-9]+)?(Z|[+-](?:2[0-3]|[0-1][0-9]):[0-5][0-9])?$
+          type: number
+          description: Lineage reference object of STVCCSL_ACTIVITY_DATE
+          x-lineageReferenceObject: STVCCSL_ACTIVITY_DATE
+        code:
+          title: Code
+          maxLength: 2
           type: string
-        criteria.code:
+          description: Lineage reference object of STVCCSL_CODE
+          x-lineageReferenceObject: STVCCSL_CODE
+        desc:
+          title: Description
+          maxLength: 30
           type: string
-        criteria.desc:
-          type: string
+          description: Lineage reference object of STVCCSL_DESC
+          x-lineageReferenceObject: STVCCSL_DESC
+      additionalProperties: false
+      x-lineageReferenceObject: stvccsl
     errors-2.0.0:
       required:
       - errors
@@ -172,10 +190,7 @@ components:
                 type: string
               description:
                 type: string
-    catalog-element-fours-1.0.0_get:
-      required:
-      - code
-      - desc
+    classification-codes-1.0.0_qapi_post:
       type: object
       properties:
         activityDate:
@@ -183,22 +198,20 @@ components:
           maxLength: 11
           pattern: ^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[0-1]|0[1-9]|[1-2][0-9])T(2[0-3]|[0-1][0-9]):([0-5][0-9]):([0-5][0-9])(\.[0-9]+)?(Z|[+-](?:2[0-3]|[0-1][0-9]):[0-5][0-9])?$
           type: number
-          description: Lineage reference object of STVCUDD_ACTIVITY_DATE
-          x-lineageReferenceObject: STVCUDD_ACTIVITY_DATE
+          description: Lineage reference object of STVCCSL_ACTIVITY_DATE
+          x-lineageReferenceObject: STVCCSL_ACTIVITY_DATE
         code:
           title: Code
-          maxLength: 15
+          maxLength: 2
           type: string
-          description: Lineage reference object of STVCUDD_CODE
-          x-lineageReferenceObject: STVCUDD_CODE
+          description: Lineage reference object of STVCCSL_CODE
+          x-lineageReferenceObject: STVCCSL_CODE
         desc:
           title: Description
           maxLength: 30
           type: string
-          description: Lineage reference object of STVCUDD_DESC
-          x-lineageReferenceObject: STVCUDD_DESC
-      additionalProperties: false
-      x-lineageReferenceObject: stvcudd
+          description: Lineage reference object of STVCCSL_DESC
+          x-lineageReferenceObject: STVCCSL_DESC
   securitySchemes:
     BearerAuth:
       type: http

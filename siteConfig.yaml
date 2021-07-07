@@ -19,8 +19,8 @@ oasDefinitions:
   bannerSections: ./openapi/banner-sections-16.0.0.yaml
   bannerStudents: ./openapi/banner-students-16.0.0.yaml
   # admissionApplicationChecklist: ./openapi/businessAPIs/admission-application-checklist.yaml
-  catalogElementFours: ./openApi/businessAPIs/catalog-element-fours.yaml
-  # classificationCodes: ./openApi/businessAPIs/classification-codes.yaml
+  # catalogElementFours: ./openApi/businessAPIs/catalog-element-fours.yaml
+  classificationCodes: ./openApi/businessAPIs/classification-codes.yaml
   # miscellaneousTransaction: ./openApi/businessAPIs/miscellaneous-transaction.yaml
   # nameTypes: ./openApi/businessAPIs/name-types.yaml
   # partitionCodes: ./openApi/businessAPIs/partition-codes.yaml
