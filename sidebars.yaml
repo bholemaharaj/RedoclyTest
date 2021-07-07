@@ -73,8 +73,8 @@ training:
   - group: Business APIs
     expanded: false
     pages:
-      - label: Admission Application Checklist
-        page: openapi/businessAPIs/admission-application-checklist.page.yaml
+      # - label: Admission Application Checklist
+      #   page: openapi/businessAPIs/admission-application-checklist.page.yaml
       - label: Catalog Element Fours
         page: openapi/businessAPIs/catalog-element-fours.page.yaml
       # - label: Classification Codes
