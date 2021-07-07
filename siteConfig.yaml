@@ -6,7 +6,7 @@ meta:
 logo: ./images/logo.png
 enableToc: true
 oasDefinitions:
-  multiVersion: https://api.redoc.ly/registry/ellucian/persons_courses/V1/bundle/master/openapi.yaml
+  #multiVersion: https://api.redoc.ly/registry/ellucian/persons_courses/V1/bundle/master/openapi.yaml
   bannerAcademicCatalogs: ./openapi/banner-academic-catalogs-6.1.0.yaml
   bannerAcademicCredentials: ./openapi/banner-academic-credentials-6.0.yaml
   bannerAcademicDisciplines: ./openapi/banner-academic-disciplines-15.0.yaml
@@ -19,6 +19,15 @@ oasDefinitions:
   bannerSections: ./openapi/banner-sections-16.0.0.yaml
   bannerStudents: ./openapi/banner-students-16.0.0.yaml
   admissionApplicationChecklist: ./openapi/businessAPIs/admission-application-checklist.yaml
+  catalogElementFours: ./openApi/businessAPIs/catalog-element-fours.yaml
+  classificationCodes: ./openApi/businessAPIs/classification-codes.yaml
+  miscellaneousTransaction: ./openApi/businessAPIs/miscellaneous-transaction.yaml
+  nameTypes: ./openApi/businessAPIs/name-types.yaml
+  partitionCodes: ./openApi/businessAPIs/partition-codes.yaml
+  receiptQueries: ./openApi/businessAPIs/receipt-queries.yaml
+  religionCodes: ./openApi/businessAPIs/religion-codes.yaml
+  residenceCodes: ./openApi/businessAPIs/residence-codes.yaml
+  timeStatusCodes: ./openApi/businessAPIs/time-status-codes.yaml
   petstore: ./openapi/petstore.yaml
   # add links to definitions in our API registry by using a fully qualified URL.
 stylesheets:
