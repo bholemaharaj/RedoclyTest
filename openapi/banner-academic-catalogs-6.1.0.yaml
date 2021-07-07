@@ -3,6 +3,27 @@ info:
   title: Academic Catalogs
   description: All academic catalog identifiers defined by the institution that represents the student's academic catalog term on program and field of study records.
   version: '6.1.0'
+tags:
+  - name: Banner
+    description: ERP type
+  - name: EEDM
+    description: Type of API   
+  - name: Student
+    description: The domain of this API
+x-tagGroups:
+  - name: Product
+    tags:
+      - Banner
+      - Colleague
+  - name: API Type
+    tags: 
+      - EEDM
+      - Business
+  - name: Domain
+      - Advancement
+      - Foundation
+      - Finance
+      - Student
 servers:
 - url: https://integrate.elluciancloud.com/api
   description: Ethos Integration

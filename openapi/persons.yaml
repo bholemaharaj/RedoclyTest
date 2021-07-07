@@ -3,6 +3,27 @@ info:
   title: Persons
   description: Persons API
   version: 1.0.0
+tags:
+  - name: Colleague
+    description: ERP type
+  - name: EEDM
+    description: Type of API   
+  - name: Foundation
+    description: The domain of this API
+x-tagGroups:
+  - name: Product
+    tags:
+      - Banner
+      - Colleague
+  - name: API Type
+    tags: 
+      - EEDM
+      - Business
+  - name: Domain
+      - Advancement
+      - Foundation
+      - Finance
+      - Student
 servers:
   - url: "https://ellucian.getsandbox.com:443"
     description: Ethos Persons API
