@@ -75,22 +75,24 @@ training:
     pages:
       - label: Admission Application Checklist
         page: openapi/businessAPIs/admission-application-checklist.page.yaml
-      - label: Business API 2
-        page: custom/dummy2.md
-      - label: Business API 3
-        page: custom/dummy3.md
-      - label: Business API 4
-        page: custom/dummy1.md
-      - label: Business API 5
-        page: custom/dummy2.md
-      - label: Business API 6
-        page: custom/dummy3.md
-      - label: Business API 7
-        page: custom/dummy1.md
-      - label: Business API 8
-        page: openapi/multiVersion.page.yaml        
-      - label: Business API 10
-        page: custom/dummy1.md
+      - label: Catalog Element Fours
+        page: openapi/businessAPIs/catalog-element-fours.page.yaml
+      - label: Classification Codes
+        page: openapi/businessAPIs/classification-codes.page.yaml
+      - label: Miscellaneous Transaction
+        page: openapi/businessAPIs/miscellaneous-transaction.page.yaml
+      - label: Name Types
+        page: openapi/businessAPIs/name-types.page.yaml
+      - label: Partition Codes
+        page: openapi/businessAPIs/partition-codes.page.yaml
+      - label: Receipt Queries
+        page: openapi/businessAPIs/receipt-queries.page.yaml
+      - label: Religion Codes
+        page: openapi/businessAPIs/religion-codes.page.yaml
+      - label: Residence Codes
+        page: openapi/businessAPIs/residence-codes.page.yaml
+      - label: Time Status Codes
+        page: openapi/businessAPIs/time-status-codes.page.yaml  
 
 
 alternative:
