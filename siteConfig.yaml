@@ -6,7 +6,6 @@ meta:
 logo: ./images/logo.png
 enableToc: true
 oasDefinitions:
-  #multiVersion: https://api.redoc.ly/registry/ellucian/persons_courses/V1/bundle/master/openapi.yaml
   bannerAcademicCatalogs: ./openapi/banner-academic-catalogs-6.1.0.yaml
   bannerAcademicCredentials: ./openapi/banner-academic-credentials-6.0.yaml
   bannerAcademicDisciplines: ./openapi/banner-academic-disciplines-15.0.yaml
