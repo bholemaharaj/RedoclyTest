@@ -1,0 +1,121 @@
+openapi: 3.0.0
+info:
+  title: Academic Honors
+  description: Honors presented to a student based on academic achievement.
+  version: '6.0'
+servers:
+- url: https://integrate.elluciancloud.com/api
+  description: Ethos Integration
+paths:
+  /academic-honors:
+    get:
+      summary: Return all resources from STVHONR and STVHOND
+      description: Returns a paged listing of all the academic honor records. The departmental honor records are retrieved from STVHONR table and institutional honor records are retrieved from STVHOND table.
+      security:
+        - BearerAuth: []
+      tags:
+        - academic-honors
+      parameters:
+        - name: accept
+          in: header
+          required: true
+          description:  |
+            The version of the resource requested. Prefer to use only the whole MAJOR version.  See the semantic versioning topic in the API Standards from more information. 
+            ```
+            application/vnd.hedtech.integration.v6+json
+            ```
+          schema:
+            type: string
+        - name: limit
+          in: query
+          required: false
+          description: The maximum number of resources requesting for this result set. Default page limit is 500 and upper limit is 1000.
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          required: false
+          description: The 0 based index for a collection of resources for the page requested.
+          schema:
+            type: integer
+        - name: criteria
+          in: query
+          required: false
+          schema:
+            type: object
+          description: |
+            ### Type  
+            Returns all academic honors for the specific honors type i.e. award, distinction.
+            ```
+            /academic-honors?type=award
+            ```
+
+
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+          headers:
+            X-Media-Type:
+              description: application/vnd.hedtech.integration.v6+json
+              schema:
+                type: string
+            X-Total-Count:
+              description: Specifies the total number of resources that satisfy the query.
+              schema:
+                type: integer
+        '401':
+          description: Unauthorized
+        '404':
+          description: Resource not found
+        '500':
+          description: Server error, unexpected configuration or data
+  /academic-honors/{id}:
+    get:
+      summary: Return the requested resource from STVHONR and STVHOND
+      description: Return the single academic honor record with the passed in identifier
+      security:
+        - BearerAuth: []
+      tags:
+        - academic-honors
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: A global identifier of Academic Honors for use in all external references
+          schema:
+            type: string
+            format: GUID
+            minimum: 1
+        - name: accept
+          in: header
+          required: true
+          description:  |
+            The version of the resource requested. Please refer to the API source documentation for detailed support information. Prefer to use only the whole MAJOR version. 
+            ```
+            application/vnd.hedtech.integration.v6+json
+            ```
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          headers:
+            X-Media-Type:
+              description: application/vnd.hedtech.integration.v6+json
+              schema:
+                type: string
+        '401':
+          description: Unauthorized
+        '404':
+          description: Resource not found
+        '500':
+          description: Server error, unexpected configuration or data
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer

@@ -53,21 +53,21 @@ training:
       - label: Academic Disciplines
         page: openapi/banner-academic-disciplines.page.yaml
       - label: Academic Honors
-        page: custom/dummy1.md
+        page: openapi/banner-academic-honors.page.yaml
       - label: Academic Period Enrollment Statuses
-        page: custom/dummy2.md
+        page: openapi/banner-academic-period-enrollmentstatuses.page.yaml
       - label: Academic Periods
-        page: custom/dummy3.md
+        page: openapi/banner-academic-periods.page.yaml
       - label: Persons
         page: openapi/persons.page.yaml
       - label: Courses
         page: openapi/courses.page.yaml
       - label: Sections
-        page: custom/dummy2.md
+        page: openapi/banner-sections.page.yaml
       - label: Students
-        page: custom/dummy3.md
+        page: openapi/banner-students.page.yaml
       - label: Section Registrations
-        page: custom/dummy1.md
+        page: openapi/banner-section-registrations.page.yaml
       - label: Vendors
         page: custom/dummy2.md
   - group: Business APIs

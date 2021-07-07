@@ -1,0 +1,293 @@
+openapi: 3.0.0
+info:
+  title: Section Registrations
+  description:  |
+        Section registrations records a student's interaction with a course section for a specific registration. Supports both OLR (open-learning) and non-OLR (traditional) registrations.
+        
+        This version of the API supports mapping multiple Banner regitration status values from STVRSTS to a same status.sectionRegistrationStatusReason Ethos enumeration in API configuration setting REGISTRATION.STATUS.REASON.V4. Please refer to "Map multiple Banner values to an Ethos enumeration" section in Banner Ethos API handbook for details on API behavior when multiple mappings are available in these setting for the same Ethos enumeration.
+        
+        Please refer to "API Integration Configuration Settings" section in the Banner Ethos API Handbook for details on API configuration settings that needs to be configured for this API.
+
+  version: '16.1.0'
+servers:
+- url: https://integrate.elluciancloud.com/api
+  description: Ethos Integration 
+tags:
+- name: section-registrations
+paths:
+  /section-registrations:
+    get:
+      summary: Returns resources from SFRSTCR 
+      description: |
+        Returns a paged listing of section registrations records from SFRSTCR excluding the registration records with 'pending' status.
+        
+        If the registration status code (STVRSTS_CODE) is mapped to a valid registration sectionRegistrationStatusReason enumeration (registered, withdrawn, dropped, canceled) in the API configuration setting REGISTRATION.STATUS.REASON.V4, the API publishes the registration status property with the associated registration 'status.detail.id'. If the registration status code on a registration record is not mapped to a valid enumeration on this setting, the API only retrieves registration status enumeration but does not publish the 'status.detail.id' property.
+        
+      security:
+        - BearerAuth: []
+      tags:
+        - section-registrations
+      parameters:
+        - name: accept
+          in: header
+          required: true
+          description:  |
+            The version of the resource requested. Prefer to use only the whole MAJOR version.  See the semantic versioning topic in the API Standards from more information.
+            ```
+            application/vnd.hedtech.integration.v16+json
+            ```
+          schema:
+            type: string
+        - name: limit
+          in: query
+          required: false
+          description: The maximum number of resources requesting for this result set. Default page limit is 100 and upper limit is 500.
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          required: false
+          description: The 0 based index for a collection of resources for the page requested.
+          schema:
+            type: integer
+        - name: criteria
+          in: query
+          required: false
+          schema:
+            type: object
+          description: |
+            ### Registrant  
+            A person registered for a section.
+            ```
+            /section-registrations?criteria={"registrant":{"id":"5674f28b-b216-4055-b236-81a922d93b4c"}}
+            ```
+            ### Section  
+            An instance of a course for which a person is registering.
+            ```
+            /section-registrations?criteria={"section":{"id":"cfa09192-7e0b-46ca-aaa3-13b0c659f9cc"}}
+            ```
+
+        - name: academicPeriod
+          in: query
+          required: false
+          schema:
+            type: object
+          description: |
+            ### Academic Period  
+            Filter to return section registrations associated with a specific term / academic period.
+            ```
+            /section-registrations?academicPeriod={"academicPeriod":{"id":"86a94f19-9216-4c52-a4b0-31e3bf674280"}}
+            ```
+        - name: sectionInstructor
+          in: query
+          required: false
+          schema:
+            type: object
+          description: |
+            ### Section Instructor  
+            Filter to return section registrations associated with a specific instructor/faculty.
+            ```
+            /section-registrations?sectionInstructor={"sectionInstructor":{"id":"86a94f19-9216-4c52-a4b0-31e3bf674280"}}
+            ```
+        - name: registrationStatusesByAcademicPeriod
+          in: query
+          required: false
+          schema:
+            type: object
+          description: |
+            ### Registration Statuses by Academic Period  
+            Filter to return section registrations by status and academic period.
+            ```
+            /section-registrations?registrationStatusesByAcademicPeriod={"statuses":[{"detail":{"id":"fcdf4931-172d-43a0-87c5-08a083f79503"}}],"academicPeriod":{"id":"86a94f19-9216-4c52-a4b0-31e3bf674280"}}
+            ```
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+          headers:
+            X-Media-Type:
+              description: application/vnd.hedtech.integration.v16.1.0+json
+              schema:
+                type: string
+            X-Total-Count:
+              description: Specifies the total number of resources that satisfy the query.
+              schema:
+                type: integer
+        '400':
+          description: Bad Request 
+        '401':
+          description: Unauthorized  
+        '403':
+          description: Permission Denied
+        '404':
+          description: Resource not found
+        '500':
+          description: Server error, unexpected configuration or data
+    post:
+      summary: Create a new resource in SFRSTCR 
+      description:  |
+        POST requests must include a nil GUID value ("00000000-0000-0000-0000-000000000000") for the root id property.
+
+        Creates a new section registration record in SFRSTCR. A general student record in SGBSTDN must exist in order to register a student successfully.
+        
+        The properties 'approvals' and 'override' are not supported. Create request sent with these properties will be rejected with an error message.
+      security:
+        - BearerAuth: []
+      tags:
+        - section-registrations
+      parameters:
+        - name: accept
+          in: header
+          required: true
+          description:  |
+            The version of the resource requested. Please refer to the API source documentation for detailed support information. Prefer to use only the whole MAJOR version. 
+            ```
+            application/vnd.hedtech.integration.v16+json
+            ```
+          schema:
+            type: string
+        - name: content type
+          in: header
+          required: true
+          description:  |
+            The version of the resource supplied in the request. Please refer to the API source documentation for detailed support information. Prefer to use only the whole MAJOR version. 
+            ```
+            application/vnd.hedtech.integration.v16+json
+            ```
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          headers:
+            X-Media-Type:
+              description: application/vnd.hedtech.integration.v16.1.0+json
+              schema:
+                type: string
+        '400':
+          description: Bad Request 
+        '401':
+          description: Unauthorized  
+        '403':
+          description: Permission Denied
+        '404':
+          description: Resource not found
+        '500':
+          description: Server error, unexpected configuration or data
+
+  /section-registrations/{id}:
+    get:
+      summary: Return the requested resource from SFRSTCR 
+      description:  |
+        Returns a single section registrations record from SFRSTCR with the requested identifier
+        
+      security:
+        - BearerAuth: []
+      tags:
+        - section-registrations
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: A global identifier of the resource for use in all external references
+          schema:
+            type: string
+            format: GUID
+            minimum: 1
+        - name: accept
+          in: header
+          required: true
+          description:  |
+            The version of the resource requested. Please refer to the API source documentation for detailed support information. Prefer to use only the whole MAJOR version. 
+            ```
+            application/vnd.hedtech.integration.v16+json
+            ```
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          headers:
+            X-Media-Type:
+              description: application/vnd.hedtech.integration.v16.1.0+json
+              schema:
+                type: string
+        '400':
+          description: Bad Request 
+        '401':
+          description: Unauthorized  
+        '403':
+          description: Permission Denied
+        '404':
+          description: Resource not found
+        '500':
+          description: Server error, unexpected configuration or data
+
+    put:
+      summary: Update the requested resource from SFRSTCR 
+      description:  |
+        Updates an existing section registration record.
+        
+        Note that the properties 'registrant.id', 'section. id' and 'originallyRegisteredOn' cannot be changed.
+        
+        The properties 'approvals' and 'override' are not supported. Update request sent with these properties will be rejected with an error message.
+        
+        
+      security:
+        - BearerAuth: []
+      tags:
+        - section-registrations
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: A global identifier of Section Registrations for use in all external references
+          schema:
+            type: string
+            format: GUID
+            minimum: 1
+        - name: accept
+          in: header
+          required: true
+          description:  |
+            The version of the resource requested. Please refer to the API source documentation for detailed support information. Prefer to use only the whole MAJOR version. 
+            ```
+            application/vnd.hedtech.integration.v16+json 
+            ```
+          schema:
+            type: string
+        - name: content type
+          in: header
+          required: true
+          description:  |
+            The version of the resource supplied in the request. Please refer to the API source documentation for detailed support information. Prefer to use only the whole MAJOR version. 
+            ```
+            application/vnd.hedtech.integration.v16+json 
+            ```
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          headers:
+            X-Media-Type:
+              description: application/vnd.hedtech.integration.v16.1.0+json
+              schema:
+                type: string
+        '400':
+          description: Bad Request 
+        '401':
+          description: Unauthorized  
+        '403':
+          description: Permission Denied
+        '500':
+          description: Server error, unexpected configuration or data
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
