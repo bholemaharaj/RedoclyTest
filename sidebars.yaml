@@ -75,8 +75,8 @@ training:
     pages:
       - label: Admission Application Checklist
         page: openapi/businessAPIs/admission-application-checklist.page.yaml
-      # - label: Catalog Element Fours
-      #   page: openapi/businessAPIs/catalog-element-fours.page.yaml
+      - label: Catalog Element Fours
+        page: openapi/businessAPIs/catalog-element-fours.page.yaml
       # - label: Classification Codes
       #   page: openapi/businessAPIs/classification-codes.page.yaml
       # - label: Miscellaneous Transaction
