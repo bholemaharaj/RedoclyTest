@@ -3,32 +3,12 @@ info:
   title: Persons
   description: Persons API
   version: 1.0.0
-#tags:
-#  - name: Colleague
-#    description: ERP type
-#  - name: EEDM
-#    description: Type of API   
-#  - name: Foundation
-#    description: The domain of this API
-#x-tagGroups:
-#  - name: Product
-#    tags:
-#      - Colleague
-#  - name: API Type
-#    tags: 
-#      - EEDM
-#  - name: Domain
-#      - Foundation
 servers:
   - url: "https://ellucian.getsandbox.com:443"
     description: Ethos Persons API
 paths:
   /persons:
     get:
-      #tags:
-      #  - Colleague
-      #  - EEDM
-      #  - Foundation
       parameters:
         - name: criteria
           in: query
@@ -177,9 +157,6 @@ paths:
     post:
       tags:
         - persons
-#        - Colleague
-#        - EEDM
-#        - Foundation
       summary: Return resources from persons
       requestBody:
         description: user to add to the system
