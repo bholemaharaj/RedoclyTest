@@ -18,6 +18,7 @@ oasDefinitions:
   bannerSectionRegistrations: ./openapi/banner-section-registrations-16.1.0.yaml
   bannerSections: ./openapi/banner-sections-16.0.0.yaml
   bannerStudents: ./openapi/banner-students-16.0.0.yaml
+  admissionApplicationChecklist: ./openapi/businessAPIs/admission-application-checklist.yaml
   petstore: ./openapi/petstore.yaml
   # add links to definitions in our API registry by using a fully qualified URL.
 stylesheets:

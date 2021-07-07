@@ -73,8 +73,8 @@ training:
   - group: Business APIs
     expanded: false
     pages:
-      - label: Business API 1
-        page: custom/dummy1.md
+      - label: Admission Application Checklist
+        page: openapi/businessAPIs/admission-application-checklist.page.yaml
       - label: Business API 2
         page: custom/dummy2.md
       - label: Business API 3
