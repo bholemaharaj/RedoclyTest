@@ -55,7 +55,7 @@ training:
       - label: Academic Honors
         page: openapi/banner-academic-honors.page.yaml
       - label: Academic Period Enrollment Statuses
-        page: openapi/banner-academic-period-enrollmentstatuses.page.yaml
+        page: openapi/banner-academic-period-enrollment-statuses.page.yaml
       - label: Academic Periods
         page: openapi/banner-academic-periods.page.yaml
       - label: Persons
