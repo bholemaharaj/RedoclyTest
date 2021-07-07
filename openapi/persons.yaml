@@ -13,17 +13,12 @@ tags:
 x-tagGroups:
   - name: Product
     tags:
-      - Banner
       - Colleague
   - name: API Type
     tags: 
       - EEDM
-      - Business
   - name: Domain
-      - Advancement
       - Foundation
-      - Finance
-      - Student
 servers:
   - url: "https://ellucian.getsandbox.com:443"
     description: Ethos Persons API
