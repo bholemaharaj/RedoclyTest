@@ -73,7 +73,7 @@ training:
     expanded: false
     pages:
       - label: Admission Application Checklist
-        page: openapi/admission-application-checklist.page.yaml
+        page: openapi/business/admission-application-checklist.page.yaml
       # - label: Catalog Element Fours
       #   page: openapi/catalog-element-fours.page.yaml
       # - label: Classification Codes
@@ -93,7 +93,7 @@ training:
       # - label: Time Status Codes
       #   page: openapi/time-status-codes.page.yaml
       - label: Courses
-        page: openapi/courses.page.yaml  
+        page: openapi/business/courses.page.yaml  
 
 
 alternative:

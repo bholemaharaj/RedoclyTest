@@ -9,7 +9,7 @@ oasDefinitions:
   bannerAcademicCatalogs: ./openapi/banner-academic-catalogs-6.1.0.yaml
   bannerAcademicCredentials: ./openapi/banner-academic-credentials-6.0.yaml
   bannerAcademicDisciplines: ./openapi/banner-academic-disciplines-15.0.yaml
-  courses: ./openapi/courses.yaml
+  # courses: ./openapi/courses.yaml
   persons: ./openapi/persons.yaml
   bannerAcademicHonors: ./openapi/banner-academic-honors-6.0.yaml
   bannerAcademicPeriodEnrollmentStatuses: ./openapi/banner-academic-period-enrollment-statuses-7.0.yaml
@@ -17,7 +17,8 @@ oasDefinitions:
   bannerSectionRegistrations: ./openapi/banner-section-registrations-16.1.0.yaml
   bannerSections: ./openapi/banner-sections-16.0.0.yaml
   bannerStudents: ./openapi/banner-students-16.0.0.yaml
-  admissionApplicationChecklist: ./openapi/admission-application-checklist.yaml
+  # Business APIs
+  admissionApplicationChecklist: ./openapi/business/admission-application-checklist.yaml
   # catalogElementFours: ./openApi/catalog-element-fours.yaml
   # classificationCodes: ./openApi/classification-codes.yaml
   # miscellaneousTransaction: ./openApi/miscellaneous-transaction.yaml
@@ -27,6 +28,7 @@ oasDefinitions:
   # religionCodes: ./openApi/religion-codes.yaml
   # residenceCodes: ./openApi/residence-codes.yaml
   # timeStatusCodes: ./openApi/time-status-codes.yaml
+  courses: ./openapi/business/courses.yaml
   petstore: ./openapi/petstore.yaml
   # add links to definitions in our API registry by using a fully qualified URL.
 stylesheets:
