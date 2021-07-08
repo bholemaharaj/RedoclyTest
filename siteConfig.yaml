@@ -18,15 +18,15 @@ oasDefinitions:
   bannerSections: ./openapi/banner-sections-16.0.0.yaml
   bannerStudents: ./openapi/banner-students-16.0.0.yaml
   admissionApplicationChecklist: ./openapi/admission-application-checklist.yaml
-  catalogElementFours: ./openApi/catalog-element-fours.yaml
-  classificationCodes: ./openApi/classification-codes.yaml
-  miscellaneousTransaction: ./openApi/miscellaneous-transaction.yaml
-  nameTypes: ./openApi/name-types.yaml
-  partitionCodes: ./openApi/partition-codes.yaml
-  receiptQueries: ./openApi/receipt-queries.yaml
-  religionCodes: ./openApi/religion-codes.yaml
-  residenceCodes: ./openApi/residence-codes.yaml
-  timeStatusCodes: ./openApi/time-status-codes.yaml
+  # catalogElementFours: ./openApi/catalog-element-fours.yaml
+  # classificationCodes: ./openApi/classification-codes.yaml
+  # miscellaneousTransaction: ./openApi/miscellaneous-transaction.yaml
+  # nameTypes: ./openApi/name-types.yaml
+  # partitionCodes: ./openApi/partition-codes.yaml
+  # receiptQueries: ./openApi/receipt-queries.yaml
+  # religionCodes: ./openApi/religion-codes.yaml
+  # residenceCodes: ./openApi/residence-codes.yaml
+  # timeStatusCodes: ./openApi/time-status-codes.yaml
   petstore: ./openapi/petstore.yaml
   # add links to definitions in our API registry by using a fully qualified URL.
 stylesheets:

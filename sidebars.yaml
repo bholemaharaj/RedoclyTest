@@ -74,24 +74,24 @@ training:
     pages:
       - label: Admission Application Checklist
         page: openapi/admission-application-checklist.page.yaml
-      - label: Catalog Element Fours
-        page: openapi/catalog-element-fours.page.yaml
-      - label: Classification Codes
-        page: openapi/classification-codes.page.yaml
-      - label: Miscellaneous Transaction
-        page: openapi/miscellaneous-transaction.page.yaml
-      - label: Name Types
-        page: openapi/name-types.page.yaml
-      - label: Partition Codes
-        page: openapi/partition-codes.page.yaml
-      - label: Receipt Queries
-        page: openapi/receipt-queries.page.yaml
-      - label: Religion Codes
-        page: openapi/religion-codes.page.yaml
-      - label: Residence Codes
-        page: openapi/residence-codes.page.yaml
-      - label: Time Status Codes
-        page: openapi/time-status-codes.page.yaml  
+      # - label: Catalog Element Fours
+      #   page: openapi/catalog-element-fours.page.yaml
+      # - label: Classification Codes
+      #   page: openapi/classification-codes.page.yaml
+      # - label: Miscellaneous Transaction
+      #   page: openapi/miscellaneous-transaction.page.yaml
+      # - label: Name Types
+      #   page: openapi/name-types.page.yaml
+      # - label: Partition Codes
+      #   page: openapi/partition-codes.page.yaml
+      # - label: Receipt Queries
+      #   page: openapi/receipt-queries.page.yaml
+      # - label: Religion Codes
+      #   page: openapi/religion-codes.page.yaml
+      # - label: Residence Codes
+      #   page: openapi/residence-codes.page.yaml
+      # - label: Time Status Codes
+      #   page: openapi/time-status-codes.page.yaml  
 
 
 alternative:
