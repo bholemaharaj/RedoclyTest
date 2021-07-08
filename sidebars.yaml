@@ -86,8 +86,8 @@ training:
       #   page: openapi/partition-codes.page.yaml
       # - label: Receipt Queries
       #   page: openapi/receipt-queries.page.yaml
-      # - label: Religion Codes
-      #   page: openapi/religion-codes.page.yaml
+      - label: Religion Codes
+        page: openapi/religion-codes.page.yaml
       # - label: Residence Codes
       #   page: openapi/residence-codes.page.yaml
       # - label: Time Status Codes
