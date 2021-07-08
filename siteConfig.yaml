@@ -24,7 +24,7 @@ oasDefinitions:
   # nameTypes: ./openApi/name-types.yaml
   # partitionCodes: ./openApi/partition-codes.yaml
   # receiptQueries: ./openApi/receipt-queries.yaml
-  religionCodes: ./openApi/religion-codes.yaml
+  # religionCodes: ./openApi/religion-codes.yaml
   # residenceCodes: ./openApi/residence-codes.yaml
   # timeStatusCodes: ./openApi/time-status-codes.yaml
   petstore: ./openapi/petstore.yaml

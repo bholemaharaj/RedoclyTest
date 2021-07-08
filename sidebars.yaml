@@ -59,8 +59,8 @@ training:
         page: openapi/banner-academic-periods.page.yaml
       - label: Persons
         page: openapi/persons.page.yaml
-      - label: Courses
-        page: openapi/courses.page.yaml
+      # - label: Courses
+      #   page: openapi/courses.page.yaml
       - label: Sections
         page: openapi/banner-sections.page.yaml
       - label: Students
@@ -86,12 +86,14 @@ training:
       #   page: openapi/partition-codes.page.yaml
       # - label: Receipt Queries
       #   page: openapi/receipt-queries.page.yaml
-      - label: Religion Codes
-        page: openapi/religion-codes.page.yaml
+      # - label: Religion Codes
+      #   page: openapi/religion-codes.page.yaml
       # - label: Residence Codes
       #   page: openapi/residence-codes.page.yaml
       # - label: Time Status Codes
-      #   page: openapi/time-status-codes.page.yaml  
+      #   page: openapi/time-status-codes.page.yaml
+      - label: Courses
+        page: openapi/courses.page.yaml  
 
 
 alternative:
