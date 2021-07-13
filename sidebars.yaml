@@ -78,11 +78,12 @@ catalog:
       - label: Academic Periods
         pages:
         -  page: openapi/banner-academic-periods.page.yaml/*
+      - label: Courses
+        pages:
+          - page: openapi/business/courses.page.yaml/*
       - label: Persons
         pages:
         -  page: openapi/persons.page.yaml/*
-      # - label: Courses
-      #   page: openapi/courses.page.yaml/*
       - label: Sections
         pages:
         -  page: openapi/banner-sections.page.yaml/*
@@ -104,25 +105,30 @@ catalog:
       - label: Catalog Element Fours
         pages:
           - page: openapi/business/catalog-element-fours.page.yaml/*
-      # - label: Classification Codes
-      #   pages:
-      #     - page: openapi/business/classification-codes.page.yaml/*
-      # - label: Miscellaneous Transaction
-      #   page: openapi/miscellaneous-transaction.page.yaml
-      # - label: Name Types
-      #   page: openapi/name-types.page.yaml
-      # - label: Partition Codes
-      #   page: openapi/partition-codes.page.yaml
-      # - label: Receipt Queries
-      #   page: openapi/receipt-queries.page.yaml
-      # - label: Religion Codes
-      #   page: openapi/religion-codes.page.yaml
-      # - label: Residence Codes
-      #   page: openapi/residence-codes.page.yaml
-      # - label: Time Status Codes
-      #   page: openapi/time-status-codes.page.yaml
-      - label: Courses
-        page: openapi/business/courses.page.yaml
+      - label: Classification Codes
+        pages:
+          - page: openapi/business/classification-codes.page.yaml/*
+      - label: Miscellaneous Transaction
+        pages:
+          - page: openapi/business/miscellaneous-transaction.page.yaml/*
+      - label: Name Types
+        pages:
+          - page: penapi/business/name-types.page.yaml/*
+      - label: Partition Codes
+        pages:
+          - page: openapi/business/partition-codes.page.yaml/*
+      - label: Receipt Queries
+        pages:
+          - page: openapi/business/receipt-queries.page.yaml/*
+      - label: Religion Codes
+        pages:
+          - page: openapi/business/religion-codes.page.yaml/*
+      - label: Residence Codes
+        pages:
+          - page: openapi/business/residence-codes.page.yaml/*
+      - label: Time Status Codes
+        pages:
+          - page: openapi/business/time-status-codes.page.yaml/*
 
 Recipes:
   - page: developer-portal/recipes.md
