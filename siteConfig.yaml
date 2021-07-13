@@ -1,12 +1,38 @@
 meta:
-  title: Redocly Training
+  title: Ellucian Developer Experience
   description: The best API documentation generator ever.
   siteUrl: https://portal-demo.redoc.ly
   keywords: redocly developer portal, api portal starter, api reference docs
-logo: ./images/logo.png
+logo: ./images/ellucian_full.png
 enableToc: true
 oasDefinitions:
+<<<<<<< Updated upstream
   multiVersion: https://api.redoc.ly/registry/ellucian/persons_courses/V1/bundle/master/openapi.yaml
+=======
+  bannerAcademicCatalogs: ./openapi/banner-academic-catalogs-6.1.0.yaml
+  bannerAcademicCredentials: ./openapi/banner-academic-credentials-6.0.yaml
+  bannerAcademicDisciplines: ./openapi/banner-academic-disciplines-15.0.yaml
+  # courses: ./openapi/business/courses.yaml
+  persons: ./openapi/persons.yaml
+  bannerAcademicHonors: ./openapi/banner-academic-honors-6.0.yaml
+  bannerAcademicPeriodEnrollmentStatuses: ./openapi/banner-academic-period-enrollment-statuses-7.0.yaml
+  bannerAcademicPeriods: ./openapi/banner-academic-periods-16.1.0.yaml
+  bannerSectionRegistrations: ./openapi/banner-section-registrations-16.1.0.yaml
+  bannerSections: ./openapi/banner-sections-16.0.0.yaml
+  bannerStudents: ./openapi/banner-students-16.0.0.yaml
+  # Business APIs
+  admissionApplicationChecklist: ./openapi/business/admission-application-checklist.yaml
+  catalogElementFours: ./openapi/business/catalog-element-fours.yaml
+  # classificationCodes: ./openApi/classification-codes.yaml
+  # miscellaneousTransaction: ./openApi/miscellaneous-transaction.yaml
+  # nameTypes: ./openApi/name-types.yaml
+  # partitionCodes: ./openApi/partition-codes.yaml
+  # receiptQueries: ./openApi/receipt-queries.yaml
+  # religionCodes: ./openApi/religion-codes.yaml
+  # residenceCodes: ./openApi/residence-codes.yaml
+  # timeStatusCodes: ./openApi/time-status-codes.yaml
+  courses: ./openapi/business/courses.yaml
+>>>>>>> Stashed changes
   petstore: ./openapi/petstore.yaml
   # add links to definitions in our API registry by using a fully qualified URL.
 stylesheets:
@@ -23,14 +49,14 @@ nav:
   - label: Training exercises
     page: developer-portal/index.md
 
-  - label: External docs
-    icon: ./images/redocly-icon-white.png
-    href: https://docs.redoc.ly/developer-portal/introduction/
-
+  - label: Resources Site
+    icon: ./images/ellucian_power_button.png
+    #  href: https://docs.redoc.ly/developer-portal/introduction/
+    href: https://resources.elluciancloud.com/
   - search: true
 
 footer:
-  copyrightText: Copyright © Redocly 2019-2021. All right reserved.
+  copyrightText: © 2021 Ellucian Company L.P. and its affiliates. All rights reserved.
   columns:
     - group: Legal
       items:

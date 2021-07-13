@@ -1,7 +1,12 @@
 training:
   - page: developer-portal/index.md
+<<<<<<< Updated upstream
   - group: Training exercises
     expanded: true
+=======
+  - group: Redocly Training exercises
+    expanded: false
+>>>>>>> Stashed changes
     pages:
       - label: Setup
         page: developer-portal/setup.md
@@ -38,10 +43,26 @@ training:
         page: developer-portal/mdx.mdx
       - label: Creating React components
         page: developer-portal/custom-component.mdx
+  - group: Get Started
+    expanded: false
+    pages:
+      - label: Get Started with Dev Experience
+        page: get-started/developer-experience.md
+      - label: Get Started with Ethos Integration
+        page: get-started/ethos-integration.md
+
+alternative:
+  - page: developer-portal/sidebar-alternative.md
+    label: Alternative sidebar example
+
+catalog:
+  - page: developer-portal/api-catalog.md
+    label: API Catalog
   - group: Petstore reference
     expanded: false
     pages:
       - page: openapi/reference.page.yaml/*
+<<<<<<< Updated upstream
   - page: openapi/multiVersion.page.yaml
 
   - group: Admin
@@ -70,3 +91,79 @@ training:
 alternative:
   - page: developer-portal/sidebar-alternative.md
     label: Alternative sidebar example
+=======
+  - group: Ethos APIs
+    expanded: false
+    pages:
+      - label: Academic Catalogs
+        pages:
+          - page: openapi/banner-academic-catalogs.page.yaml/*
+      - label: Academic Credentials
+        pages:
+        -  page: openapi/banner-academic-credentials.page.yaml/*
+      - label: Academic Disciplines
+        pages:
+        -  page: openapi/banner-academic-disciplines.page.yaml/*
+      - label: Academic Honors
+        pages:
+        -  page: openapi/banner-academic-honors.page.yaml/*
+      - label: Academic Period Enrollment Statuses
+        pages:
+        -  page: openapi/banner-academic-period-enrollment-statuses.page.yaml/*
+      - label: Academic Periods
+        pages:
+        -  page: openapi/banner-academic-periods.page.yaml/*
+      - label: Persons
+        pages:
+        -  page: openapi/persons.page.yaml/*
+      # - label: Courses
+      #   page: openapi/courses.page.yaml/*
+      - label: Sections
+        pages:
+        -  page: openapi/banner-sections.page.yaml/*
+      - label: Students
+        pages:
+        -  page: openapi/banner-students.page.yaml/*
+      - label: Section Registrations
+        pages:
+        -  page: openapi/banner-section-registrations.page.yaml/*
+      - label: Vendors
+        pages:
+        -  page: custom/dummy2.md
+  - group: Business APIs
+    expanded: false
+    pages:
+      - label: Admission Application Checklist
+        pages:
+          - page: openapi/business/admission-application-checklist.page.yaml/*
+      - label: Catalog Element Fours
+        pages:
+          - page: openapi/business/catalog-element-fours.page.yaml/*
+      # - label: Classification Codes
+      #   page: openapi/classification-codes.page.yaml
+      # - label: Miscellaneous Transaction
+      #   page: openapi/miscellaneous-transaction.page.yaml
+      # - label: Name Types
+      #   page: openapi/name-types.page.yaml
+      # - label: Partition Codes
+      #   page: openapi/partition-codes.page.yaml
+      # - label: Receipt Queries
+      #   page: openapi/receipt-queries.page.yaml
+      # - label: Religion Codes
+      #   page: openapi/religion-codes.page.yaml
+      # - label: Residence Codes
+      #   page: openapi/residence-codes.page.yaml
+      # - label: Time Status Codes
+      #   page: openapi/time-status-codes.page.yaml
+      - label: Courses
+        page: openapi/business/courses.page.yaml
+
+Recipes:
+  - page: developer-portal/recipes.md
+    label: Recipes
+  - group: Update Person
+    expanded: false
+    pages:
+      - label: Update Person operation
+        page: recipes/update-person-recipe.md
+>>>>>>> Stashed changes
