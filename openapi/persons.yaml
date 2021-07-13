@@ -1,0 +1,285 @@
+openapi: 3.0.3
+info:
+  title: Persons
+  description: Persons API
+  version: 1.0.0
+servers:
+  - url: "https://ellucian.getsandbox.com:443"
+    description: Ethos Persons API
+paths:
+  /persons:
+    get:
+      parameters:
+        - name: criteria
+          in: query
+          description: Criteria to filter by in JSON format.
+          required: false
+          schema:
+            type: string
+        - name: offset
+          in: query
+          description: From which row to retrieve the record from.
+          required: false
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          description: Total number of records to retrieve.
+          required: false
+          schema:
+            type: integer
+      x-codeSamples:
+        - lang: "C#"
+          label: "CSharp"
+          source: |
+            EthosProxyClient ethosProxyClient = GetEthosProxyClient();
+            EthosResponse ethosResponse = null;
+            try
+            {
+                string resourceName = "student-cohorts";
+                ethosResponse = await ethosProxyClient.GetAsync( resourceName, string.Empty );
+                string totalCountHdr = ethosResponse.GetHeader( EthosProxyClient.HDR_X_TOTAL_COUNT );
+                Console.WriteLine( "******* Get data for resource example, no paging. *******" );
+                Console.WriteLine( $"Get data for resource: {resourceName}" );
+                PrintHeaders( ethosResponse );
+                Console.WriteLine( "getResource() TOTAL COUNT: " + totalCountHdr );
+                Console.WriteLine( "getResource() RESPONSE: " + ethosResponse );
+            }
+            catch ( Exception e )
+            {
+                Console.WriteLine( e.Message );
+            }
+        - lang: Java
+          source: |
+            EthosProxyClient ethosProxyClient = getEthosProxyClient();
+            try {
+                String resourceName = "student-cohorts";
+                JsonNode jsonNode = ethosProxyClient.getAsJsonNode(resourceName);
+                System.out.println( "******* doGetResourceAsJsonNodeExample() *******" );
+                System.out.println(String.format("Get data for resource: %s", resourceName));
+                System.out.println("getAsJsonNode() PAGE SIZE: " + jsonNode.size());
+                System.out.println("getAsJsonNode() RESPONSE: " + jsonNode.toString() );
+            } catch (IOException ioe) {
+                ioe.printStackTrace();
+            }
+      tags:
+        - persons
+      summary: Return resources from persons
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-Media-Type:
+              description: The full semantic version with the media type of the response
+              schema:
+                type: string
+          content:
+            application/vnd.hedtech.integration.v12.3.0+json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/persons-12.3.0"
+              examples:
+                persons-v1230.json:
+                  value:
+                    - id: 1f268710-da1a-40c7-a695-7634814ee745
+                      names:
+                        - type:
+                            category: legal
+                            detail:
+                              id: c76311ba-63dc-4e63-884d-6b3bc41701bb
+                          title: Mr.
+                          firstName: Jon
+                          lastName: Doe
+                        - type:
+                            category: married
+                            detail:
+                              id: b76311ba-63dc-4e63-884d-6b3bc41701bb
+                          title: Mr
+                          firstName: John
+                          lastName: Dough
+                      roles:
+                        - role: student
+                        - role: prospectiveStudent
+                      credentials:
+                        - type: colleaguePersonId
+                          value: "0000016"
+                        - type: colleagueUserName
+                          value: parsons0000016
+                    - id: 2f268710-da1a-40c7-a695-7634814ee745
+                      names:
+                        - type:
+                            category: legal
+                            detail:
+                              id: c76311ba-63dc-4e63-884d-6b3bc41701bb
+                          title: Mr.
+                          firstName: Jon
+                          lastName: Doe
+                        - type:
+                            category: married
+                            detail:
+                              id: b76311ba-63dc-4e63-884d-6b3bc41701bb
+                          title: Mr
+                          firstName: John
+                          lastName: Dough
+                      roles:
+                        - role: student
+                        - role: prospectiveStudent
+                      credentials:
+                        - type: colleaguePersonId
+                          value: "0000016"
+                        - type: colleagueUserName
+                          value: parsons0000016
+            application/vnd.hedtech.integration.v12+json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/persons-12.0.0"
+              examples:
+                persons-v12.json:
+                  value:
+                    - id: 3f268710-da1a-40c7-a695-7634814ee745
+                      names:
+                        - type:
+                            category: legal
+                            detail:
+                              id: c76311ba-63dc-4e63-884d-6b3bc41701bb
+                          title: Mr.
+                          firstName: Jon
+                          lastName: Doe
+                        - type:
+                            category: married
+                            detail:
+                              id: b76311ba-63dc-4e63-884d-6b3bc41701bb
+                          title: Mr
+                          firstName: John
+                          lastName: Dough
+    post:
+      tags:
+        - persons
+      summary: Return resources from persons
+      requestBody:
+        description: user to add to the system
+        content:
+          application/vnd.hedtech.integration.v12+json:
+            schema:
+              $ref: "#/components/schemas/persons-12.0.0"
+            examples:
+              user:
+                summary: User Example
+                externalValue: "#/components/schemas/persons-12.0.0"
+          application/vnd.hedtech.integration.v12.3.0+json:
+            schema:
+              $ref: "#/components/schemas/persons-12.3.0"
+            examples:
+              user:
+                summary: User Example
+                externalValue: "#/components/schemas/persons-12.3.0"
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-Media-Type:
+              description: The full semantic version with the media type of the response
+              schema:
+                type: string
+          content:
+            application/vnd.hedtech.integration.v12+json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/persons-12.0.0"
+            application/vnd.hedtech.integration.v12.3.0+json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/persons-12.3.0"
+        "401":
+          description: Failure. Unauthorized
+security:
+  - ApiKeyAuth: ["api-7f00fbee-045f-4841-9e1d-c486e0197df5"]
+components:
+  securitySchemes:
+      ApiKeyAuth:        # arbitrary name for the security scheme
+        type: apiKey
+        in: header       # can be "header", "query" or "cookie"
+        name: API-Key        
+  schemas:
+    persons-12.0.0:
+      type: object
+      properties:
+        id:
+          title: id
+          type: string
+          format: uuid
+        names:
+          type: array
+          items:
+            $ref: "#/components/schemas/names"
+    persons-12.3.0:
+      type: object
+      properties:
+        id:
+          title: id
+          type: string
+          format: uuid
+        names:
+          type: array
+          items:
+            $ref: "#/components/schemas/names"
+        roles:
+          type: array
+          items:
+            $ref: "#/components/schemas/roles"
+        credentials:
+          type: array
+          items:
+            $ref: "#/components/schemas/credentials"
+    names:
+      type: object
+      properties:
+        firstName:
+          title: firstName
+          type: string
+        lastName:
+          title: lastName
+          type: string
+        title:
+          title: title
+          type: string
+        type:
+          $ref: "#/components/schemas/type"
+    type:
+      type: object
+      properties:
+        category:
+          title: category
+          type: string
+        detail:
+          $ref: "#/components/schemas/detail"
+    detail:
+      type: object
+      required:
+        - "id"
+      properties:
+        id:
+          title: id
+          type: string
+          format: uuid
+    roles:
+      type: object
+      required:
+        - "role"
+      properties:
+        role:
+          type: string
+    credentials:
+      type: object
+      required:
+        - "type"
+        - "value"
+      properties:
+        type:
+          type: string
+        value:
+          type: string

@@ -1,0 +1,259 @@
+openapi: 3.0.0
+info:
+  title: Academic Disciplines
+  description:  |
+        An academic discipline is a branch of knowledge that is researched and taught as a part of higher education. This entity is used to define academic programs.
+        
+        Please refer to "API Integration Configuration Settings" section in the Banner Ethos API Handbook for details on API configuration settings that needs to be configured for this API.
+  version: '15.0'
+servers:
+- url: https://integrate.elluciancloud.com/api
+  description: Ethos Integration 
+paths:
+  /academic-disciplines:
+    get:
+      summary: Returns resources from STVMAJR 
+      description: |
+        Returns a paged listing of all the academic discipline records of type major, minor and concentration from STVMAJR table
+      security:
+        - BearerAuth: []
+      tags:
+        - academic-disciplines
+      parameters:
+        - name: accept
+          in: header
+          required: true
+          description:  |
+            The version of the resource requested. Prefer to use only the whole MAJOR version.  See the semantic versioning topic in the API Standards from more information.
+            ```
+            application/vnd.hedtech.integration.v15+json
+            ```
+          schema:
+            type: string
+        - name: limit
+          in: query
+          required: false
+          description: The maximum number of resources requesting for this result set. Default page limit is 500 and upper limit is 1000.
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          required: false
+          description: The 0 based index for a collection of resources for the page requested.
+          schema:
+            type: integer
+        - name: criteria
+          in: query
+          required: false
+          schema:
+            type: object
+          description: |
+            ### Type  
+            A type of academic discipline.
+            ```
+            academic-disciplines?criteria={"type": {$type}}
+            ```
+
+        - name: majorStatus
+          in: query
+          required: false
+          schema:
+            type: object
+          description: |
+            ### Major Status  
+            Filter to return the major with the supplied status.
+            ```
+            /academic-disciplines?majorStatus={"majorStatus": {$majorStatus}}
+            ```
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+          headers:
+            X-Media-Type:
+              description: application/vnd.hedtech.integration.v15+json
+              schema:
+                type: string
+            X-Total-Count:
+              description: Specifies the total number of resources that satisfy the query.
+              schema:
+                type: integer
+        '400':
+          description: Bad Request 
+        '401':
+          description: Unauthorized  
+        '403':
+          description: Permission Denied
+        '404':
+          description: Resource not found
+        '500':
+          description: Server error, unexpected configuration or data
+    post:
+      summary: Create a new resource in STVMAJR 
+      description:  |
+        POST requests must include a nil GUID value ("00000000-0000-0000-0000-000000000000") for the root id property.
+
+        Creates a new academic discipline record in STVMAJR table
+        
+        Below is the API behavior details for reporting property on a create request:
+        
+        Reporting:
+        
+        - 'reporting' property is accepted only if STVMAJR_CIPC_CODE is sent in the create request.
+        - The reporting country codes supported in the API are USA and CAN. Create request will be rejected with an error message if country code does not match USA or CAN.
+        - The reporting country code sent in the request should match the home institution country code in GUBINST_ NATN_CODE. Create request will be rejected with an error message if the reported country code sent in request does not match the GUBINST_NATN_CODE.
+        
+      security:
+        - BearerAuth: []
+      tags:
+        - academic-disciplines
+      parameters:
+        - name: accept
+          in: header
+          required: true
+          description:  |
+            The version of the resource requested. Please refer to the API source documentation for detailed support information. Prefer to use only the whole MAJOR version. 
+            ```
+            application/vnd.hedtech.integration.v15+json
+            ```
+          schema:
+            type: string
+        - name: content type
+          in: header
+          required: true
+          description:  |
+            The version of the resource supplied in the request. Please refer to the API source documentation for detailed support information. Prefer to use only the whole MAJOR version. 
+            ```
+            application/vnd.hedtech.integration.v15+json
+            ```
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          headers:
+            X-Media-Type:
+              description: application/vnd.hedtech.integration.v15+json
+              schema:
+                type: string
+        '400':
+          description: Bad Request 
+        '401':
+          description: Unauthorized  
+        '403':
+          description: Permission Denied
+        '404':
+          description: Resource not found
+        '500':
+          description: Server error, unexpected configuration or data
+  /academic-disciplines/{id}:
+    get:
+      summary: Return the requested resource from STVMAJR 
+      description:  |
+        Returns a single academic discipline record from STVMAJR with the requested identifier
+      security:
+        - BearerAuth: []
+      tags:
+        - academic-disciplines
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: A global identifier of the resource for use in all external references
+          schema:
+            type: string
+            format: GUID
+            minimum: 1
+        - name: accept
+          in: header
+          required: true
+          description:  |
+            The version of the resource requested. Please refer to the API source documentation for detailed support information. Prefer to use only the whole MAJOR version. 
+            ```
+            application/vnd.hedtech.integration.v15+json
+            ```
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          headers:
+            X-Media-Type:
+              description: application/vnd.hedtech.integration.v15+json
+              schema:
+                type: string
+        '400':
+          description: Bad Request 
+        '401':
+          description: Unauthorized  
+        '403':
+          description: Permission Denied
+        '404':
+          description: Resource not found
+        '500':
+          description: Server error, unexpected configuration or data
+    put:
+      summary: Update the requested resource from STVMAJR 
+      description:  |
+        Updates the existing academic discipline record in STVMAJR table with the passed in identifier.
+        
+        Please refer to the notes in POST section of this document for API behavior details on 'reporting' property.
+        
+        
+      security:
+        - BearerAuth: []
+      tags:
+        - academic-disciplines
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: A global identifier of Academic Disciplines for use in all external references
+          schema:
+            type: string
+            format: GUID
+            minimum: 1
+        - name: accept
+          in: header
+          required: true
+          description:  |
+            The version of the resource requested. Please refer to the API source documentation for detailed support information. Prefer to use only the whole MAJOR version. 
+            ```
+            application/vnd.hedtech.integration.v15+json 
+            ```
+          schema:
+            type: string
+        - name: content type
+          in: header
+          required: true
+          description:  |
+            The version of the resource supplied in the request. Please refer to the API source documentation for detailed support information. Prefer to use only the whole MAJOR version. 
+            ```
+            application/vnd.hedtech.integration.v15+json 
+            ```
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          headers:
+            X-Media-Type:
+              description: application/vnd.hedtech.integration.v15+json
+              schema:
+                type: string
+        '400':
+          description: Bad Request 
+        '401':
+          description: Unauthorized  
+        '403':
+          description: Permission Denied
+        '500':
+          description: Server error, unexpected configuration or data
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer

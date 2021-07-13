@@ -1,8 +1,8 @@
 ---
 openapi: 3.0.3
 info:
-  title: Ethos API's
-  description: List of Ethos API's
+  title: Persons and Courses
+  description: Persons and Courses API's
   version: 1.0.0
 servers:
 - url: https://ellucian.getsandbox.com:443

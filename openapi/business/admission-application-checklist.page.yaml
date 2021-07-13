@@ -1,8 +1,9 @@
 type: reference-docs
-definitionId: petstore
+definitionId: admissionApplicationChecklist
 settings:
   generateCodeSamples:
     languages:
       - lang: curl
       - lang: JavaScript
       - lang: Node.js
+  pagination: none

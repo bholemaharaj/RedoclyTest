@@ -1,0 +1,102 @@
+openapi: 3.0.3
+info:
+  title: Courses
+  description: Courses API's
+  version: 1.0.0
+servers:
+  - url: "https://ellucian.getsandbox.com:443"
+    description: Ethos Courses API
+paths:
+  /courses:
+    get:
+      parameters:
+        - name: criteria
+          in: query
+          description: Criteria to filter by in JSON format.
+          required: false
+          schema:
+            type: string
+        - name: offset
+          in: query
+          description: From which row to retrieve the record from.
+          required: false
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          description: Total number of records to retrieve.
+          required: false
+          schema:
+            type: integer
+      tags:
+        - courses
+      summary: Return resources from courses
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-Media-Type:
+              description: The full semantic version with the media type of the response
+              schema:
+                type: string
+          content:
+            application/vnd.hedtech.integration.v16.1.0+json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/courses"
+              examples:
+                course-v1.json:
+                  value:
+                    courses:
+                      - id: a0966bd7-3ccb-4a9b-a3e1-4949a1a14945
+                        titles:
+                          - type:
+                              id: 2bd35ff8-4669-43ba-bd75-f6f1228290ed
+                              value: Talmudic Studies
+                          - type:
+                              id: 2657133e-4206-415e-aba6-0ced840bd036
+                              value: Statics
+                      - id: a0966bd7-3ccb-4a9b-a3e1-4949a1a14945
+                        titles:
+                          - type:
+                              id: 2bd35ff8-4669-43ba-bd75-f6f1228290ed
+                              value: Cost Accounting
+                          - type:
+                              id: 2657133e-4206-415e-aba6-0ced840bd036
+                              value: Cost Accounting for Accountants
+security:
+  - ApiKeyAuth: ["api-7f00fbee-045f-4841-9e1d-c486e0197df5"]
+components:
+  securitySchemes:
+      ApiKeyAuth:        # arbitrary name for the security scheme
+        type: apiKey
+        in: header       # can be "header", "query" or "cookie"
+        name: API-Key        
+  schemas:
+    courses:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        titles:
+          type: array
+          items:
+            $ref: "#/components/schemas/titles"
+    titles:
+      type: object
+      required:
+        - "value"
+        - "type"
+      properties:
+        value:
+          type: string
+        type:
+          $ref: "#/components/schemas/id"
+    id:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid

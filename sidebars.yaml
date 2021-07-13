@@ -1,12 +1,7 @@
 training:
   - page: developer-portal/index.md
-<<<<<<< Updated upstream
-  - group: Training exercises
-    expanded: true
-=======
   - group: Redocly Training exercises
     expanded: false
->>>>>>> Stashed changes
     pages:
       - label: Setup
         page: developer-portal/setup.md
@@ -62,36 +57,6 @@ catalog:
     expanded: false
     pages:
       - page: openapi/reference.page.yaml/*
-<<<<<<< Updated upstream
-  - page: openapi/multiVersion.page.yaml
-
-  - group: Admin
-    expanded: true
-    pages:
-      - group: Routine
-        expanded: true
-        pages:
-          - group: Rock
-            expanded: true
-            pages:
-              - group: Paper
-                expanded: true
-                pages:
-                  - group: Scissors
-                    expanded: true
-                    pages:
-                      - group: 1-2-3
-                        expanded: true
-                        pages:
-                          - group: Go
-                            expanded: true
-                            pages:
-                              - label: Upgrading
-                                # page: developer-portal/upgrade.md
-alternative:
-  - page: developer-portal/sidebar-alternative.md
-    label: Alternative sidebar example
-=======
   - group: Ethos APIs
     expanded: false
     pages:
@@ -166,4 +131,3 @@ Recipes:
     pages:
       - label: Update Person operation
         page: recipes/update-person-recipe.md
->>>>>>> Stashed changes
