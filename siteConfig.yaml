@@ -21,14 +21,14 @@ oasDefinitions:
   # Business APIs
   admissionApplicationChecklist: ./openapi/business/admission-application-checklist.yaml
   catalogElementFours: ./openapi/business/catalog-element-fours.yaml
-  classificationCodes: ./openApi/business/classification-codes.yaml
-  miscellaneousTransaction: ./openapi/business/miscellaneous-transaction.yaml
-  nameTypes: ./openapi/business/name-types.yaml
-  partitionCodes: ./openapi/business/partition-codes.yaml
-  receiptQueries: ./openapi/business/receipt-queries.yaml
-  religionCodes: ./openapi/business/religion-codes.yaml
-  residenceCodes: ./openapi/business/residence-codes.yaml
-  timeStatusCodes: ./openapi/business/time-status-codes.yaml
+  # classificationCodes: ./openApi/business/classification-codes.yaml
+  # miscellaneousTransaction: ./openapi/business/miscellaneous-transaction.yaml
+  # nameTypes: ./openapi/business/name-types.yaml
+  # partitionCodes: ./openapi/business/partition-codes.yaml
+  # receiptQueries: ./openapi/business/receipt-queries.yaml
+  # religionCodes: ./openapi/business/religion-codes.yaml
+  # residenceCodes: ./openapi/business/residence-codes.yaml
+  # timeStatusCodes: ./openapi/business/time-status-codes.yaml
   courses: ./openapi/business/courses.yaml
   petstore: ./openapi/petstore.yaml
   # add links to definitions in our API registry by using a fully qualified URL.

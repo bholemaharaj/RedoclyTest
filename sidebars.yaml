@@ -105,30 +105,30 @@ catalog:
       - label: Catalog Element Fours
         pages:
           - page: openapi/business/catalog-element-fours.page.yaml/*
-      - label: Classification Codes
-        pages:
-          - page: openapi/business/classification-codes.page.yaml/*
-      - label: Miscellaneous Transaction
-        pages:
-          - page: openapi/business/miscellaneous-transaction.page.yaml/*
-      - label: Name Types
-        pages:
-          - page: penapi/business/name-types.page.yaml/*
-      - label: Partition Codes
-        pages:
-          - page: openapi/business/partition-codes.page.yaml/*
-      - label: Receipt Queries
-        pages:
-          - page: openapi/business/receipt-queries.page.yaml/*
-      - label: Religion Codes
-        pages:
-          - page: openapi/business/religion-codes.page.yaml/*
-      - label: Residence Codes
-        pages:
-          - page: openapi/business/residence-codes.page.yaml/*
-      - label: Time Status Codes
-        pages:
-          - page: openapi/business/time-status-codes.page.yaml/*
+      # - label: Classification Codes
+      #   pages:
+      #     - page: openapi/business/classification-codes.page.yaml/*
+      # - label: Miscellaneous Transaction
+      #   pages:
+      #     - page: openapi/business/miscellaneous-transaction.page.yaml/*
+      # - label: Name Types
+      #   pages:
+      #     - page: penapi/business/name-types.page.yaml/*
+      # - label: Partition Codes
+      #   pages:
+      #     - page: openapi/business/partition-codes.page.yaml/*
+      # - label: Receipt Queries
+      #   pages:
+      #     - page: openapi/business/receipt-queries.page.yaml/*
+      # - label: Religion Codes
+      #   pages:
+      #     - page: openapi/business/religion-codes.page.yaml/*
+      # - label: Residence Codes
+      #   pages:
+      #     - page: openapi/business/residence-codes.page.yaml/*
+      # - label: Time Status Codes
+      #   pages:
+      #     - page: openapi/business/time-status-codes.page.yaml/*
 
 Recipes:
   - page: developer-portal/recipes.md

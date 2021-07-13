@@ -1,9 +1,0 @@
-type: reference-docs
-definitionId: partitionCodes
-settings:
-  generateCodeSamples:
-    languages:
-      - lang: curl
-      - lang: JavaScript
-      - lang: Node.js
-  pagination: none
