@@ -104,8 +104,9 @@ catalog:
       - label: Catalog Element Fours
         pages:
           - page: openapi/business/catalog-element-fours.page.yaml/*
-      # - label: Classification Codes
-      #   page: openapi/classification-codes.page.yaml
+      - label: Classification Codes
+        pages:
+          - page: openapi/classification-codes.page.yaml/*
       # - label: Miscellaneous Transaction
       #   page: openapi/miscellaneous-transaction.page.yaml
       # - label: Name Types

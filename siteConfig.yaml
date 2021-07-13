@@ -22,7 +22,7 @@ oasDefinitions:
   # Business APIs
   admissionApplicationChecklist: ./openapi/business/admission-application-checklist.yaml
   catalogElementFours: ./openapi/business/catalog-element-fours.yaml
-  # classificationCodes: ./openApi/classification-codes.yaml
+  classificationCodes: ./openApi/classification-codes.yaml
   # miscellaneousTransaction: ./openApi/miscellaneous-transaction.yaml
   # nameTypes: ./openApi/name-types.yaml
   # partitionCodes: ./openApi/partition-codes.yaml
