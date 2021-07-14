@@ -133,8 +133,8 @@ catalog:
 Recipes:
   - page: developer-portal/recipes.md
     label: Recipes
-  - group: Update Person
+  - group: Create a Person
     expanded: false
     pages:
-      - label: Update Person operation
-        page: recipes/update-person-recipe.md
+      - label: Create a Person in Banner
+        page: recipes/create-person-banner-recipe.md
