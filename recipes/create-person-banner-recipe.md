@@ -35,7 +35,7 @@ Banner processes and users create person records for many reasons and the person
 	[insert examples of SDK code snippets]
 	
 
-### Step B:  Person Found/Not Found###
+### Step B:  Person Found/Not Found ###
 The QAPI will execute user-defined matching rules in Banner and return any person records that match the submitted criteria.  These records can then be reviewed to determine if an existing record should be updated or a new person record created.
 
 ### Step C:  PUT request to persons ###
@@ -47,7 +47,7 @@ To update an existing person record, a PUT request to the persons API is used.  
 The persons PUT request will return the full persons data model schema not just the properties included in the update request.
 
 ### Step E:  Additional updates needed ###
-If after review of the response additional person record updates are required simply repeat Step C.
+If after review of the response additional person record updates are required simply repeat [Step C](#step-c--put-request-to-persons).
 
 ### Step F:  Post request to persons ###
 Use a POST request to the persons API to create a new person record in Banner.  Only required properties are needed to create the person record but for efficiency you may want to include as much optional information as is known.  The record can be updated with additional information at a later time as needed.
