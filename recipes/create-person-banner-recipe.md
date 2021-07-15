@@ -20,6 +20,14 @@ graph TD
     classDef cssClass2 fill:#A1E6DA,stroke:#333,stroke-width:2px, font-size:15px;
     class Cid1,Gid1 cssClass3;
     classDef cssClass2 fill:#A1E6DA,stroke:#333,stroke-width:2px, font-size:15px;
+
+    click B "./#step-a--persons-qapi-call"
+    click Cid1 "./#step-b--person-foundnot-found"
+    click D "./#step-c--put-request-to-persons"
+    click E "./#step-f--post-request-to-persons"
+    click F "./#step-d--person-record-update-in-banner"
+    click Gid1 "./#step-e--additional-updates-needed"
+    click H "./#step-g--person-record-created-in-banner"
 ```
 
 The Ethos enabled EEDM APIs can be used to create and/or update a person record in the Banner General system.  The person record created through the persons API is accessible to other systems just as if that person record had been created by an administrator using the Banner user interface.
