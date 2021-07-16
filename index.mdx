@@ -21,6 +21,8 @@ import {
 import { NavBar } from '@redocly/ui';
 
 import icon1 from './images/icon1.png';
+import recipeBook from './images/recipe-book.png';
+import tryItOutIcon from './images/try-it-out-icon.png';
 import launchFastIcon from './images/launch-fast.svg';
 import icon3 from './images/icon3.png';
 import bookManagementIcon from './images/book-management.svg';
@@ -32,7 +34,7 @@ export default LandingLayout;
 <Jumbotron>
   <NavBar location={props.location} standalone={false} />
   <H1>Ellucian Developer Experience</H1>
-  <H2>A starter developer portal with training exercises</H2>
+  <H2>A Developer portal with training exercises</H2>
   <Flex p={20} justifyContent="center">
     {/* <Button inversed large to="https://app.redoc.ly">
       Redocly app
@@ -50,14 +52,14 @@ export default LandingLayout;
     Create your <Emphasis> integration </Emphasis> today!
   </SectionHeader>
   <FlexSection justifyContent="space-around" flexWrap="wrap">
-    <ThinTile to="developer-portal/recipes.mdx" icon={icon1} header="Recipes">
-        Explore our cookbook and find yourself a wonderful recipe! Cook yourself a delicious integration!
+    <ThinTile to="developer-portal/try-it-out.mdx" icon={tryItOutIcon} header="Try it out">
+        Try out our sample APIs to learn how they work
     </ThinTile>
     <ThinTile to="developer-portal/api-catalog.mdx" icon={ellucianPower} header="API Catalog">
         Our APIs are awesome, and you should use them for everything.  
     </ThinTile>
-    <ThinTile to="developer-portal/try-it-out.mdx" icon={icon3} header="Try it out">
-        Try out our sample APIs to learn how they work
+    <ThinTile to="developer-portal/recipes.mdx" icon={recipeBook} header="Recipes">
+        Explore our cookbook and find yourself a wonderful recipe! Cook yourself a delicious integration!
     </ThinTile>
   </FlexSection>
   {/* <Jumbotron parallaxEffect bgImage={icon1}>
@@ -66,7 +68,7 @@ export default LandingLayout;
   </Jumbotron> */}
   <SectionHeader>
     <Emphasis>Need help? </Emphasis>
-    Try our training exercises.
+    Try our Tools.
   </SectionHeader>
   <FlexSection justifyContent="space-around" flexWrap="wrap">
     <WideTile to="developer-portal/try-it-out.mdx" header="Try it out">

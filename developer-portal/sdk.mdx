@@ -21,6 +21,9 @@ import {
 
 export default LandingLayout;
 
+import javaIcon from '../images/java-icon.png';
+import csharpIcon from '../images/csharp-icon.png';
+
 <Box mx="auto">
     <Jumbotron pb="3.5em" flexDirection="column" alignItems="center" parallaxEffect="true">
         <H1>Ethos Integraiton SDKs</H1>
@@ -31,10 +34,10 @@ export default LandingLayout;
         Choose our Ethos SDK
     </SectionHeader>
     <FlexSection justifyContent="space-around" flexWrap="wrap">
-        <ThinTile to="" header="Java SDK" disableArrow="true">
+        <ThinTile to="" icon={javaIcon} header="Java SDK" disableArrow="true">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </ThinTile>
-        <ThinTile to="" header="C# SDK" disableArrow="true">
+        <ThinTile to="" icon={csharpIcon} header="C# SDK" disableArrow="true">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </ThinTile>
     </FlexSection>
