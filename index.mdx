@@ -1,5 +1,5 @@
 ---
-title: Demo API Portal
+title: Developer Portal
 ---
 
 import { LandingLayout } from '@redocly/ui';
@@ -47,19 +47,17 @@ export default LandingLayout;
 </Jumbotron>
 <Box my={25}>
   <SectionHeader>
-    Create your <Emphasis> developer portal </Emphasis> today!
+    Create your <Emphasis> integration </Emphasis> today!
   </SectionHeader>
   <FlexSection justifyContent="space-around" flexWrap="wrap">
-    <ThinTile to="developer-portal/recipes.md" icon={icon1} header="Recipes">
+    <ThinTile to="developer-portal/recipes.mdx" icon={icon1} header="Recipes">
         Explore our cookbook and find yourself a wonderful recipe! Cook yourself a delicious integration!
     </ThinTile>
-    <ThinTile to="developer-portal/api-catalog.md" icon={ellucianPower} header="API Catalog">
+    <ThinTile to="developer-portal/api-catalog.mdx" icon={ellucianPower} header="API Catalog">
         Our APIs are awesome, and you should use them for everything.  
     </ThinTile>
-    <ThinTile to="contact.mdx" icon={icon3} header="Scissors">
-        Lorem ipsum dolor sit amet, pri putent oportere quaerendum in, ea mea justo invenire
-        aliquando. Usu modo suavitate ea. Et sed labitur epicurei adipiscing. Nibh zril labitur
-        an usu.
+    <ThinTile to="developer-portal/try-it-out.mdx" icon={icon3} header="Try it out">
+        Try out our sample APIs to learn how they work
     </ThinTile>
   </FlexSection>
   {/* <Jumbotron parallaxEffect bgImage={icon1}>
@@ -71,23 +69,19 @@ export default LandingLayout;
     Try our training exercises.
   </SectionHeader>
   <FlexSection justifyContent="space-around" flexWrap="wrap">
-    <WideTile to="developer-portal/index.md" header="Scissors">
-        Lorem ipsum dolor sit amet, pri putent oportere quaerendum in, ea mea justo invenire
-        aliquando. Usu modo suavitate ea. Et sed labitur epicurei adipiscing. Nibh zril labitur
-        an usu.
+    <WideTile to="developer-portal/try-it-out.mdx" header="Try it out">
+        Try out our sample APIs to learn how they work
     </WideTile>
-    <WideTile to="developer-portal/recipes.md" header="Recipes">
-        Explore our cookbook and find yourself a wonderful recipe! Cook yourself a delicious integration!
-        "I tried one of these Integrations and they are mouthwatering!"
-          - Julia Child
+    <WideTile to="developer-portal/recipes.mdx" header="Recipes">
+        <p>Explore our cookbook and find yourself a wonderful recipe! Cook yourself a delicious integration!</p>
+        <p>"I tried one of these Integrations and they are mouthwatering!"</p>
+        <p>  - Julia Child</p>
     </WideTile>
-    <WideTile to="developer-portal/api-catalog.md" header="API Catalog">
+    <WideTile to="developer-portal/api-catalog.mdx" header="API Catalog">
         Our APIs administer the backend functionality of your ERP through Ethos. 
     </WideTile>
-    <WideTile to="developer-portal/index.md" header="Go">
-        Lorem ipsum dolor sit amet, pri putent oportere quaerendum in, ea mea justo invenire
-        aliquando. Usu modo suavitate ea. Et sed labitur epicurei adipiscing. Nibh zril labitur
-        an usu.
+    <WideTile to="developer-portal/sdk.mdx" header="Ethos Integration SDK">
+        Build your integration with Ethos Integration SDKs
     </WideTile>
   </FlexSection>
 </Box>

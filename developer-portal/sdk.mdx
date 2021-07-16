@@ -1,0 +1,41 @@
+---
+title: Ethos SDKs
+---
+
+import { LandingLayout } from '@redocly/ui';
+
+import {
+  Button,
+  Box,
+  FlexSection,
+  Flex,
+  Jumbotron,
+  ThinTile,
+  WideTile,
+  Emphasis,
+  H1,
+  H2,
+  H3,
+  SectionHeader,
+} from '@redocly/ui';
+
+export default LandingLayout;
+
+<Box mx="auto">
+    <Jumbotron pb="3.5em" flexDirection="column" alignItems="center" parallaxEffect="true">
+        <H1>Ethos Integraiton SDKs</H1>
+        <H2>Choose from our list of SKDs that suit your need to build an integration</H2>
+        <Emphasis><p>Take a pick!</p></Emphasis>
+    </Jumbotron>
+    <SectionHeader>
+        Choose our Ethos SDK
+    </SectionHeader>
+    <FlexSection justifyContent="space-around" flexWrap="wrap">
+        <ThinTile to="" header="Java SDK" disableArrow="true">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </ThinTile>
+        <ThinTile to="" header="C# SDK" disableArrow="true">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </ThinTile>
+    </FlexSection>
+</Box>

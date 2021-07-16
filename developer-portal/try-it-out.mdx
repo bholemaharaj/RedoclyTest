@@ -1,0 +1,47 @@
+---
+title: Try it out
+---
+
+import { LandingLayout } from '@redocly/ui';
+
+import {
+  Button,
+  Box,
+  FlexSection,
+  Flex,
+  Jumbotron,
+  ThinTile,
+  WideTile,
+  Emphasis,
+  H1,
+  H2,
+  H3,
+  SectionHeader,
+} from '@redocly/ui';
+
+export default LandingLayout;
+
+<Box mx="auto">
+    <Jumbotron pb="3.5em" flexDirection="column" alignItems="center" parallaxEffect="true">
+        <H1>Try it out</H1>
+        <H2>Try out our sample APIs to learn how they work</H2>
+    </Jumbotron>
+</Box>
+<Box mx="auto">
+    <form>
+    <label>
+        Name:
+        <input type="text" name="name" />
+    </label>
+    <input type="submit" value="Submit" />
+    <label>
+        Car:
+        <input type="text" name="car" />
+    </label>
+    <select>
+        <option value="Ford">Ford</option>
+        <option value="Volvo" selected>Volvo</option>
+        <option value="Fiat">Fiat</option>
+    </select>
+    </form>
+</Box>

@@ -1,0 +1,52 @@
+---
+title: API Catalog
+---
+
+import { LandingLayout } from '@redocly/ui';
+
+import {
+  Button,
+  Box,
+  FlexSection,
+  Flex,
+  Jumbotron,
+  ThinTile,
+  WideTile,
+  Emphasis,
+  H1,
+  H2,
+  H3,
+  SectionHeader,
+} from '@redocly/ui';
+
+export default LandingLayout;
+
+<Box mx="auto">
+    <Jumbotron pb="3.5em" flexDirection="column" alignItems="center" parallaxEffect="true">
+        <H1>API Catalog</H1>
+        <H2>Choose from our list of APIs that suit your need to build an integration</H2>
+        <Emphasis><p>Take a pick!</p></Emphasis>
+    </Jumbotron>
+    <SectionHeader>
+        Browse our APIs by Type
+    </SectionHeader>
+    <FlexSection justifyContent="space-around" flexWrap="wrap">
+        <ThinTile to="" header="Ethos APIs" disableArrow="true" children="Banner">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </ThinTile>
+        <ThinTile to="" header="Business APIs" disableArrow="true">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </ThinTile>
+    </FlexSection>
+    <SectionHeader>
+        Browse our APIs by Products
+    </SectionHeader>
+    <FlexSection justifyContent="space-around" flexWrap="wrap">
+        <ThinTile to="" header="Banner" disableArrow="true">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </ThinTile>
+        <ThinTile to="" header="Colleague" disableArrow="true">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </ThinTile>
+    </FlexSection>
+</Box>

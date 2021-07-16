@@ -19,6 +19,9 @@ export const theme = {
       // light: ({ colors }) => lighten(colors.tonalOffset, colors.primary.main),
       // dark: ({ colors }) => darken(colors.tonalOffset, colors.primary.main),
       // contrastText: ({ colors }) => readableColor(colors.primary.main),
+      light: "#00C4FF",
+      dark: "#0C2D79",
+      contrastText: "#FFFFFF",
     },
     // success: {
     //   main: '#00aa13',
@@ -46,7 +49,7 @@ export const theme = {
     // },
     text: {
       primary: '#000000',
-      secondary: '#007bff',
+      secondary: '#00C4FF',
       // secondary: '#4e566d',
     },
     // border: {
@@ -82,11 +85,13 @@ export const theme = {
       link: '#31bbb6',
       head: '#c167e4',
     },
-    // navbar: {
-    //   main: ({ colors }) => colors.primary.main,
-    //   gradient: ({ colors }) => darken(colors.tonalOffset / 2, colors.navbar.main),
-    //   contrastText: 'white'
-    // },
+    navbar: {
+       //main: ({ colors }) => colors.primary.main,
+       //gradient: ({ colors }) => darken(colors.tonalOffset / 2, colors.navbar.main),
+       main: "#350040",
+       gradient: "#6A1B76",
+       contrastText: 'white'
+     },
     // footer: {
       // main: ({ colors }) => colors.primary.main,
       // contrastText: 'white'
@@ -94,7 +99,7 @@ export const theme = {
   },
 
   sidebar: {
-    backgroundColor: '#fafafa',
+    backgroundColor: '#E6ECEE',
     width: '260px',
   },
   // tocPanel: {
@@ -128,14 +133,15 @@ export const theme = {
     //   lineHeight: ({ typography }) => typography.lineHeight,
     //   capitalize: false,
     // },
-    // heading3: {
-    //   fontSize: '1.27em',
-    //   fontWeight: '600',
-    //   color: ({ colors }) => colors.text.primary,
-    //   fontFamily: ({ typography }) => typography.headings.fontFamily,
-    //   lineHeight: ({ typography }) => typography.lineHeight,
-    //   capitalize: false,
-    // },
+    heading3: {
+      fontSize: '1.27em',
+      fontWeight: '600',
+      // color: ({ colors }) => colors.text.primary,
+      // fontFamily: ({ typography }) => typography.headings.fontFamily,
+      // lineHeight: ({ typography }) => typography.lineHeight,
+      color: "#FFFFFF",
+      capitalize: false,
+    },
     // heading4: {
     // // ...
     // },

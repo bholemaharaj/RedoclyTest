@@ -51,7 +51,7 @@ alternative:
     label: Alternative sidebar example
 
 catalog:
-  - page: developer-portal/api-catalog.md
+  - page: developer-portal/api-catalog.mdx
     label: API Catalog
   - group: Petstore reference
     expanded: false
@@ -97,7 +97,7 @@ catalog:
         pages:
         -  page: custom/dummy2.md
   - group: Business APIs
-    expanded: true
+    expanded: false
     pages:
       - label: Admission Application Checklist
         pages:
@@ -131,7 +131,7 @@ catalog:
       #     - page: openapi/business/time-status-codes.page.yaml/*
 
 Recipes:
-  - page: developer-portal/recipes.md
+  - page: developer-portal/recipes.mdx
     label: Recipes
   - group: Create a Person
     expanded: false

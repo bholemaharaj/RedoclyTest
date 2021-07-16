@@ -1,0 +1,38 @@
+---
+title: Recipes
+---
+
+import { LandingLayout } from '@redocly/ui';
+
+import {
+  Button,
+  Box,
+  FlexSection,
+  Flex,
+  Jumbotron,
+  ThinTile,
+  WideTile,
+  Emphasis,
+  H1,
+  H2,
+  H3,
+  SectionHeader,
+} from '@redocly/ui';
+
+export default LandingLayout;
+
+<Box mx="auto">
+    <Jumbotron pb="3.5em" flexDirection="column" alignItems="center" bgColor="#6A1B76" parallaxEffect="true">
+        <H1>Recipes</H1>
+        <H2>Explore our cookbook and find yourself a wonderful recipe! Cook yourself a delicious integration!</H2>
+        <Emphasis><p>"I tried one of these Integrations and they are mouthwatering!"</p></Emphasis>
+        <Emphasis><p>  - Julia Child</p></Emphasis>
+    </Jumbotron>
+    <Box m="2em">
+        <FlexSection justifyContent="space-around" flexWrap="wrap">
+            <WideTile to="/recipes/create-person-banner-recipe/" header="Create a Person in Banner">
+                Recipe to create a person in Banner
+            </WideTile>
+        </FlexSection>
+    </Box>
+</Box>
