@@ -595,113 +595,10 @@
 > The setup of resource ownership, subscriptions, and proxy API requests
 > all support multiple ownership of resources.
 
-+--------------+-------------------------------------------------------+
-| > Feature    | > Ethos Integration multi-owner capability            |
-+==============+=======================================================+
-| > Resource   |                                                       |
-| > ownership  |                                                       |
-| > Multiple   |                                                       |
-| >            |                                                       |
-| applications |                                                       |
-| > can own    |                                                       |
-| > the same   |                                                       |
-| > resource.  |                                                       |
-| > One        |                                                       |
-| >            |                                                       |
-|  application |                                                       |
-| > is the     |                                                       |
-| > default    |                                                       |
-| > owner. The |                                                       |
-| > first      |                                                       |
-| >            |                                                       |
-|  application |                                                       |
-| > to which   |                                                       |
-| > you assign |                                                       |
-| > a resource |                                                       |
-| > is         |                                                       |
-| > initially  |                                                       |
-| > the        |                                                       |
-| > default    |                                                       |
-| > owner, but |                                                       |
-| > you can    |                                                       |
-| > specify a  |                                                       |
-| > different  |                                                       |
-| > default    |                                                       |
-| > owner for  |                                                       |
-| > a          |                                                       |
-| > resource.  |                                                       |
-+--------------+-------------------------------------------------------+
-| > S          |                                                       |
-| ubscriptions |                                                       |
-| > When you   |                                                       |
-| > assign     |                                                       |
-| > s          |                                                       |
-| ubscriptions |                                                       |
-| > to a       |                                                       |
-| > consuming  |                                                       |
-| >            |                                                       |
-| application, |                                                       |
-| > all of the |                                                       |
-| > instances  |                                                       |
-| > of a       |                                                       |
-| > resource   |                                                       |
-| > (from all  |                                                       |
-| > owners)    |                                                       |
-| > are        |                                                       |
-| > available  |                                                       |
-| > for        |                                                       |
-| > selection. |                                                       |
-| > You select |                                                       |
-| > the        |                                                       |
-| >            |                                                       |
-|  appropriate |                                                       |
-| > instance   |                                                       |
-| > for this   |                                                       |
-| >            |                                                       |
-| application. |                                                       |
-+--------------+-------------------------------------------------------+
-| > Proxy API  |                                                       |
-| > requests A |                                                       |
-| > consuming  |                                                       |
-| >            |                                                       |
-|  application |                                                       |
-| > can make   |                                                       |
-| > proxy API  |                                                       |
-| > requests   |                                                       |
-| > to the     |                                                       |
-| > owner of a |                                                       |
-| > resource.  |                                                       |
-| > When a     |                                                       |
-| > resource   |                                                       |
-| > is owned   |                                                       |
-| > by         |                                                       |
-| > multiple   |                                                       |
-| > a          |                                                       |
-| uthoritative |                                                       |
-| > sources,   |                                                       |
-| > you can    |                                                       |
-| > create a   |                                                       |
-| > *resource  |                                                       |
-| > request*   |                                                       |
-| > to specify |                                                       |
-| > which      |                                                       |
-| > a          |                                                       |
-| uthoritative |                                                       |
-| > source the |                                                       |
-| > proxy API  |                                                       |
-| > request    |                                                       |
-| > goes to.   |                                                       |
-| > Proxy API  |                                                       |
-| > requests   |                                                       |
-| > go to the  |                                                       |
-| > default    |                                                       |
-| > owner of a |                                                       |
-| > resource   |                                                       |
-| > unless you |                                                       |
-| > create a   |                                                       |
-| > resource   |                                                       |
-| > request.   |                                                       |
-+--------------+-------------------------------------------------------+
+| Feature            | Ethos Integration multi-owner capability                                                                                                                                                                                                  |
+|--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Resource ownership | Multiple applications can own the same resource. One application is the default owner. The first application to which you assign a resource is initially the default owner, but you can specify a different default owner for a resource. |
+| Subscriptions      | When you assign subscriptions to a consuming application, all of the instances of a resource (from all owners) are available for selection. You select the appropriate instance for this application.                                     |
 
 ### Example: Banner MEP and Campus Card System
 
@@ -716,8 +613,7 @@
 > campus housing. Banner is authoritative for the housing-assignments
 > data model.
 >
-> One-to-one relationship between authoritative and consuming
-> applications
+#### One-to-one relationship between authoritative and consuming applications
 >
 > This first example assumes that you have installed two instances of
 > the Campus Card System application, one for each campus. In this
@@ -758,44 +654,20 @@
 3.  If you want the Campus Card System to subscribe to Banner-published
     changes for housing assignments:
 
-    -   Set up subscriptions for the Main Campus:
-
-> \-
->
-> \-
->
-> authentication token.
-
--   Use the same process to set up a subscription from the Campus Card
-    System North Campus instance to changes published by Banner North
-    Campus.
-
-> a
->
-> d by at is
-
-ieve the
+    - Set up subscriptions for the Main Campus:
+        - In the Ethos Integration application for Campus Card System Main Campus, add a subscription to the housing-assignments resource. Because that resource is owned by two Banner applications, you would need to select the instance of the resource that is owned by Banner Main Campus Integration API.
+        - Set up the Campus Card System application itself (Main Campus instance) to retrieve change notifications through Ethos Integration, using the API key for the Ethos Integration application for Campus Card System Main Campus when generating the authentication token.
+    - Use the same process to set up a subscription from the Campus Card System North Campus instance to changes published by Banner North Campus.
 
 4.  If you want the Campus Card System to make proxy API requests to
     Banner for housing assignments data:
 
-    -   Set up proxy API requests for the Main Campus:
+    - Set up proxy API requests for the Main Campus:
+        - In the Ethos Integration application for Campus Card System Main Campus, set up proxy API requests to the housing-assignments resource. Create a resource request to ensure that the proxy API request goes to Banner Main Campus Integration API (not required if Banner Main Campus Integration API is the default owner of housing-assignments).
+        - Set up the Campus Card System application itself (Main Campus instance) to make proxy API requests through Ethos Integration, using the API key for the Ethos Integration application for Campus Card System Main Campus when generating the authentication token.
+    - Use the same process to set up proxy API requests from the Campus Card System North Campus to Banner North Campus.
 
-> \-
->
-> \-
->
-> authentication token.
-
-up uest to (not
-
-> ke the
-
--   Use the same process to set up proxy API requests from the Campus
-    Card System North Campus to Banner North Campus.
-
-> Many-to-one relationship between authoritative and consuming
-> applications
+#### Many-to-one relationship between authoritative and consuming applications
 >
 > This example assumes that you have installed one instance of the
 > Campus Card System application, which needs access to data in both the
@@ -838,23 +710,10 @@ up uest to (not
 3.  If you want the Campus Card System to subscribe to Banner-published
     changes for housing assignments:
 
-    -   Set up subscriptions for the Main Campus:
-
-        -   In t sub two ow
-
-        -   Set thr
-
-> pus, add a
->
-> e is owned by source that is
->
-> ifications pplication for
->
-> Campus Card System Main Campus when generating the authentication
-> token.
-
--   Use the same process to set up a subscription from the Campus Card
-    System to changes published by Banner North Campus.
+    - Set up subscriptions for the Main Campus:
+        - In the Ethos Integration application for Campus Card System Main Campus, add a subscription to the housing-assignments resource. Because that resource is owned by two Banner applications, you would need to select the instance of the resource that is owned by Banner Main Campus Integration API.
+        - Set up the Campus Card System application itself to retrieve change notifications through Ethos Integration, using the API key for the Ethos Integration application for Campus Card System Main Campus when generating the authentication token.
+    - Use the same process to set up a subscription from the Campus Card System to changes published by Banner North Campus.
 
 4.  If you want the Campus Card System to make proxy API requests to
     Banner for housing assignments data:
@@ -1228,8 +1087,7 @@ up uest to (not
 > if you would like to have a copy for your own records.
 >
 > To download the end user agreement, click **More** ![More
-> button](ethos_integration/media/image11.png){width="4.1666666666666664e-2in"
-> height="0.15625in"} on this page and then click **Attachment**. In the
+> button](ethos_integration/media/image11.png) on this page and then click **Attachment**. In the
 > **Attachments** dialog box, click **Download**.
 >
 > If your institution requires a copy of this agreement that is signed

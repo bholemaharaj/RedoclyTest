@@ -19,9 +19,6 @@ export const theme = {
       // light: ({ colors }) => lighten(colors.tonalOffset, colors.primary.main),
       // dark: ({ colors }) => darken(colors.tonalOffset, colors.primary.main),
       // contrastText: ({ colors }) => readableColor(colors.primary.main),
-      light: "#00C4FF",
-      dark: "#0C2D79",
-      contrastText: "#FFFFFF",
     },
     // success: {
     //   main: '#00aa13',
@@ -139,7 +136,7 @@ export const theme = {
       // color: ({ colors }) => colors.text.primary,
       // fontFamily: ({ typography }) => typography.headings.fontFamily,
       // lineHeight: ({ typography }) => typography.lineHeight,
-      color: "#FFFFFF",
+      //color: "#000000",
       capitalize: false,
     },
     // heading4: {
