@@ -46,7 +46,7 @@ nav:
   - label: Training exercises
     page: developer-portal/index.md
 
-  - label: Resources Site
+  - label: Documentation Site
     icon: ./images/ellucian_power_button.png
     #  href: https://docs.redoc.ly/developer-portal/introduction/
     href: https://resources.elluciancloud.com/

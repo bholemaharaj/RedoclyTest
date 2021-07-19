@@ -170,3 +170,8 @@ components:
     BearerAuth:
       type: http
       scheme: bearer
+tags:
+  - name: category
+    description: Ethos API
+  - name: product
+    description: Banner
