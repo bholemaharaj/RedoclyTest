@@ -65,13 +65,14 @@ stylesheets:
 #  - ./static/intercom.js
 nav:
 
-  - label: Training exercises
-    page: developer-portal/index.md
+  - label: Get Started
+    page: /developer-portal/getStarted.mdx
 
   - label: Documentation Site
     icon: ./images/ellucian_power_button.png
     #  href: https://docs.redoc.ly/developer-portal/introduction/
-    href: https://resources.elluciancloud.com/
+    href: 'https://resources.elluciancloud.com/'
+    external: true
   - search: true
 
 footer:

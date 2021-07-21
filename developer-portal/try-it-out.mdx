@@ -29,9 +29,8 @@ export default LandingLayout;
 </Box>
 <Box mx="auto"  marginTop={5}>
     <form>
-        <Flex justifyContent="space-between" alignContent="stretch">
-            <div style={{ margin:'50px', padding: '20px 30px', backgroundColor: '#fffffe' }}>
-                <ThinTile bgColor='#fffffa'>
+        <FlexSection justifyContent="space-around" flexWrap="wrap" alignContent="stretch">
+                <ThinTile>
                     <div>
                         Select API
                         <select id='apis'>
@@ -60,6 +59,9 @@ export default LandingLayout;
                         Version:
                         <select id='versions'>
                             <option value="Get" selected>application/vnd.hedtech.integration.v12.3.0</option>
+                            <option value="Get">application/vnd.hedtech.integration.v12.2.0</option>
+                            <option value="Get">application/vnd.hedtech.integration.v12.1.0</option>
+                            <option value="Get">application/vnd.hedtech.integration.v12.0.0</option>
                         </select>
                     </div>&nbsp;
                     <div>
@@ -75,10 +77,10 @@ export default LandingLayout;
                         <input type='text' />
                     </div>&nbsp;
                     <div>
-                        <button type="submit">Submit</button>
+                        <button type="submit">Try it out</button>
                     </div>
                 </ThinTile>
-            </div>
-        </Flex>
+                <WideTile disableArrow="true"></WideTile>
+        </FlexSection>
     </form>
 </Box>

@@ -38,15 +38,19 @@ training:
         page: developer-portal/mdx.mdx
       - label: Creating React components
         page: developer-portal/custom-component.mdx
+
+getStarted:
   - group: Get Started
     expanded: false
+    page: developer-portal/getStarted.md
+    label: Get Started
     pages:
-      - label: Get Started with Experience
-        page: get-started/experience.md
       - label: Get Started with Ethos Integration
         pages: 
           - page: get-started/ethos-integration.md
           - page: quick-reference/Customer_Ethos_Integration_quick_reference.md
+      - label: Get Started with Experience
+        page: get-started/experience.md
 
 alternative:
   - page: developer-portal/sidebar-alternative.md
