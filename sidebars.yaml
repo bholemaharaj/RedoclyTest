@@ -41,10 +41,12 @@ training:
   - group: Get Started
     expanded: false
     pages:
-      - label: Get Started with Dev Experience
-        page: get-started/developer-experience.md
+      - label: Get Started with Experience
+        page: get-started/experience.md
       - label: Get Started with Ethos Integration
-        page: get-started/ethos-integration.md
+        pages: 
+          - page: get-started/ethos-integration.md
+          - page: quick-reference/Customer_Ethos_Integration_quick_reference.md
 
 alternative:
   - page: developer-portal/sidebar-alternative.md
