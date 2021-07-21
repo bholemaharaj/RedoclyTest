@@ -4,6 +4,8 @@ meta:
   siteUrl: https://portal-demo.redoc.ly
   keywords: redocly developer portal, api portal starter, api reference docs
 logo: ./images/ellucian_full.png
+
+# Enable this section to demo login feature on development environment(local)
 # login:
 #   label: Sign in
 #   userAvatar:
