@@ -1,5 +1,5 @@
 ---
-title: Try it out
+//title: Try it out
 ---
 
 import { LandingLayout } from '@redocly/ui';
@@ -16,7 +16,7 @@ import {
   H1,
   H2,
   H3,
-  SectionHeader,
+  SectionHeader
 } from '@redocly/ui';
 
 export default LandingLayout;
@@ -27,21 +27,55 @@ export default LandingLayout;
         <H2>Try out our sample APIs to learn how they work</H2>
     </Jumbotron>
 </Box>
-<Box mx="auto">
+<Box mx="auto"  marginTop={5}>
     <form>
-    <label>
-        Name:
-        <input type="text" name="name" />
-    </label>
-    <input type="submit" value="Submit" />
-    <label>
-        Car:
-        <input type="text" name="car" />
-    </label>
-    <select>
-        <option value="Ford">Ford</option>
-        <option value="Volvo" selected>Volvo</option>
-        <option value="Fiat">Fiat</option>
-    </select>
+        <Flex justifyContent="space-between" alignContent="stretch">
+            <div style={{ margin:'50px', padding: '20px 30px', backgroundColor: '#fffffe' }}>
+                <ThinTile to='#' header='Try-It-Out' bgColor='#fffffa'>
+                    <div>
+                        Select API
+                        <select id='apis'>
+                            <option value="persons" selected>persons</option>
+                            <option value="academicCatalog">academic-catalogs</option>
+                            <option value="academicCredentials">academic-credentials</option>
+                        </select>
+                    </div>&nbsp;
+                    <div>
+                        Sample API Key:
+                        <input type='text' />
+                    </div>&nbsp;
+                    <div>
+                        Access Token:
+                        <input type='text' />
+                    </div>&nbsp;
+                    <div>
+                        Method:
+                        <select id='methods'>
+                            <option value="Get">GET</option>
+                            <option value="put">PUT</option>
+                            <option value="post">POST</option>
+                        </select>
+                    </div>
+                    <div>
+                        Version:
+                        <select id='versions'>
+                            <option value="Get" selected>application/vnd.hedtech.integration.v12.3.0</option>
+                        </select>
+                    </div>&nbsp;
+                    <div>
+                        Filter:
+                        <input type='text' />
+                    </div>
+                    <div>
+                        Offset and Limit:
+                        <input type='text' />&nbsp;
+                        <input type='text' />
+                    </div>&nbsp;&nbsp;
+                    <div>
+                        <button type="submit">Submit</button>
+                    </div>
+                </ThinTile>
+            </div>
+        </Flex>
     </form>
 </Box>
