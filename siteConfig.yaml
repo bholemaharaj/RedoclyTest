@@ -6,6 +6,7 @@ meta:
 logo: ./images/ellucian_full.png
 
 # Enable this section to demo login feature on development environment(local)
+##############################################################################
 # login:
 #   label: Sign in
 #   userAvatar:
@@ -21,6 +22,9 @@ logo: ./images/ellucian_full.png
 #     - label: Sign out
 #       logout: true
 #       link: 'https://your_domain/v2/logout?client_id=YOUR_CLIENT_ID&returnTo=LOGOUT_URL'
+
+###################################################################################
+
 
 enableToc: true
 oasDefinitions:
