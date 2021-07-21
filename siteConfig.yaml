@@ -4,6 +4,22 @@ meta:
   siteUrl: https://portal-demo.redoc.ly
   keywords: redocly developer portal, api portal starter, api reference docs
 logo: ./images/ellucian_full.png
+# login:
+#   label: Sign in
+#   userAvatar:
+#     claim: picture
+#     fallbackLettersClaim: fullName
+#   userLabel:
+#     claim: email
+#     fallback: '<unknown user>'
+#   menu:
+#     - label: Profile
+#       page: profile.mdx
+#     - separatorLine: true
+#     - label: Sign out
+#       logout: true
+#       link: 'https://your_domain/v2/logout?client_id=YOUR_CLIENT_ID&returnTo=LOGOUT_URL'
+
 enableToc: true
 oasDefinitions:
   multiVersion: https://api.redoc.ly/registry/ellucian/persons_courses/V1/bundle/master/openapi.yaml
