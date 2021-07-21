@@ -1,5 +1,5 @@
 ---
-//title: Try it out
+title: Try it out
 ---
 
 import { LandingLayout } from '@redocly/ui';
@@ -31,7 +31,7 @@ export default LandingLayout;
     <form>
         <Flex justifyContent="space-between" alignContent="stretch">
             <div style={{ margin:'50px', padding: '20px 30px', backgroundColor: '#fffffe' }}>
-                <ThinTile to='#' header='Try-It-Out' bgColor='#fffffa'>
+                <ThinTile bgColor='#fffffa'>
                     <div>
                         Select API
                         <select id='apis'>
@@ -65,12 +65,15 @@ export default LandingLayout;
                     <div>
                         Filter:
                         <input type='text' />
-                    </div>
-                    <div>
-                        Offset and Limit:
-                        <input type='text' />&nbsp;
+                    </div>&nbsp;
+                   <div>
+                        Offset:
                         <input type='text' />
-                    </div>&nbsp;&nbsp;
+                    </div>&nbsp;
+                    <div>
+                        Limit:
+                        <input type='text' />
+                    </div>&nbsp;
                     <div>
                         <button type="submit">Submit</button>
                     </div>
