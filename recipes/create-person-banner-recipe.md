@@ -35,7 +35,7 @@ The Ethos enabled EEDM APIs can be used to create and/or update a person record 
 ### Prerequisites
 The process documented is dependent upon an Ethos Integration tenant configured for your project, user credentials or token for the requesting application established, and appropriate API resources deployed and configured.  Please see the [Getting Started Guide](/get-started/ethos-integration/) for information on setting up Ethos Integration.
 ​
-The Banner EEDM API resources are dependent upon configurations in the Banner system.  These configurations are maintained by Banner administrative users responsible for integration configuration decisions.  A listing of the configurations and additional information for the persons and addresses configuration is available in the [Banner Ethos API User Guide](https://resources.elluciancloud.com/bundle/banner_ethos_api_acn_use_9.24.0/page/c_use_banner_ethos_apis.html).
+The Banner EEDM API resources are dependent upon configurations in the Banner system.  These configurations are maintained by Banner administrative users responsible for integration configuration decisions.  A listing of the configurations and additional information for the persons and addresses configuration is available in the <a href="https://resources.elluciancloud.com/bundle/banner_ethos_api_acn_use_9.24.0/page/c_use_banner_ethos_apis.html" target="_blank">Banner Ethos API User Guide</a>.
 ​
 ​
 ### API Resources
@@ -140,4 +140,4 @@ A successful person POST request will return a new guid for the person in additi
 - The [persons-credentials]() API may be used to update alternative credentials for an existing person.  This can be a simplified alternative to using persons when only the alternative credentials require updating.
 - The institution may choose to mask some sensitive data within the persons API response even though the data was successfully updated by the POST request.  The header "x-content restricted/partial" denotes when restrictions prevent the API user from receiving the full schema response.
 - Subscribe to change notifications for persons to keep your data in sync with Banner.
-- Review the [Banner Ethos API Troubleshooting Article](https://ellucian.force.com/clients/s/article/Banner-Ethos-API-troublshooting)
+- Review the <a href="https://ellucian.force.com/clients/s/article/Banner-Ethos-API-troublshooting" target="_blank">Banner Ethos API Troubleshooting Article</a>
