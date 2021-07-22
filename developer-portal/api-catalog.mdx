@@ -24,29 +24,42 @@ export default LandingLayout;
 <Box mx="auto">
     <Jumbotron pb="3.5em" flexDirection="column" alignItems="center" parallaxEffect="true">
         <H1>API Catalog</H1>
-        <H2>Choose from our list of APIs that suit your need to build an integration</H2>
-        <Emphasis><p>Take a pick!</p></Emphasis>
+        {/* <H2>Choose from our list of APIs that suit your need to build an integration</H2>
+        <Emphasis><p>Take a pick!</p></Emphasis> */}
     </Jumbotron>
     <SectionHeader>
-        Browse our APIs by Type
+        <Emphasis>Choose the right type of API for your integration</Emphasis>
     </SectionHeader>
-    <FlexSection justifyContent="space-around" flexWrap="wrap">
-        <ThinTile to="" header="Ethos APIs" disableArrow="true" children="Banner">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </ThinTile>
-        <ThinTile to="" header="Business APIs" disableArrow="true">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </ThinTile>
+    <FlexSection justifyContent="center" flexWrap="wrap">
+        <img src="api-catalog/images/build_ethos_integration.png"></img>
     </FlexSection>
     <SectionHeader>
-        Browse our APIs by Products
+        <Emphasis>Ellucian Ethos API Types</Emphasis>
     </SectionHeader>
     <FlexSection justifyContent="space-around" flexWrap="wrap">
-        <ThinTile to="" header="Banner" disableArrow="true">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </ThinTile>
-        <ThinTile to="" header="Colleague" disableArrow="true">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </ThinTile>
+        <WideTile to="/openapi/banner-academic-catalogs/" header="Data Model APIs" textAlign="center">
+            The foundation of initial Ethos-enabled integrations
+        </WideTile>
+    </FlexSection>
+    <FlexSection justifyContent="space-around" flexWrap="wrap">
+        <WideTile to="" header="Ethos" disableArrow="true" textAlign="center">
+            RESTful APIs that integrate elements defined by an Ellucian Ethos Data Model (EEDM) schema.  Ethos APIs offer full CRUD support where appropriate, provide change notifications to Ethos Integration, and generally follow standards and principles as defined here on the Ethos Documentation Site:  <a href="https://resources.elluciancloud.com/bundle/ethos_integration_lrn_getstarted/page/c_define_fundamentals.html%20%22Ethos%20Principles%22\">Ethos Principles</a>
+        </WideTile>
+        <WideTile to="" header="Spec-Based" disableArrow="true" textAlign="center">
+            RESTful APIs that integrate custom entities defined by a customer, with or without a corresponding schema created using <a href="https://resources.elluciancloud.com/bundle/ethos_extend_lrn_get_started/page/c_about_ellucian_ethos_extend.html">Ethos Extend</a> (the application).
+        </WideTile>
+    </FlexSection>
+    <FlexSection justifyContent="space-around" flexWrap="wrap">
+        <WideTile to="/openapi/business/admission-application-checklist/" header="Business APIs" textAlign="center">
+            The next generation of Ethos-enabled integrations
+        </WideTile>
+    </FlexSection>
+        <FlexSection justifyContent="space-around" flexWrap="wrap">
+        <WideTile to="" header="Banner Business APIs" disableArrow="true" textAlign="center">
+            Banner Admin API implements and calls the business logic of an administrative page.  The approach here is to wrap an existing Banner Administrative page with an orchestration layer that executes the page logic at runtime and rendering the data in a REST/JSON API instead of a HTML user interface.
+        </WideTile>
+        <WideTile to="" header="Colleague Business APIs" disableArrow="true" textAlign="center">
+            *coming soon*
+        </WideTile>
     </FlexSection>
 </Box>

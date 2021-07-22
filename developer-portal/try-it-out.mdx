@@ -80,7 +80,10 @@ export default LandingLayout;
                         <button type="submit">Try it out</button>
                     </div>
                 </ThinTile>
-                <WideTile disableArrow="true"></WideTile>
+                <WideTile disableArrow="true">
+                    Response
+                    <RedocResponse definitionId="petstore" pointer="#/components/responses/PetResponse" />
+                </WideTile>
         </FlexSection>
     </form>
 </Box>

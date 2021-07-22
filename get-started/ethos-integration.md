@@ -1,4 +1,4 @@
-# Ethos Integration
+# About Ethos Integration
 
 > Updated: November 10, 2020
 >
