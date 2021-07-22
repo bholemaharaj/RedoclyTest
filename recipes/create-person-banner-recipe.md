@@ -57,8 +57,9 @@ The QAPI will execute user-defined matching rules in Banner and return any perso
 ### Step C:  PUT request to [persons](/openapi/persons/) ###
 To update an existing person record, a PUT request to the persons API is used.  Only required properties and any optional properties being updated by the request should be included.  There is no need to include optional properties that are not being updated unless they are part of an array being submitted.
 ​
-#### Java SDK:
+#### SDK Code Snippets
 
+```java Java SDK Code Snippet
     String myApiKey = "someApiKey";
     String resource = "persons";
     // First build a SimpleCriteriaArray filter to get the person.
@@ -72,9 +73,9 @@ To update an existing person record, a PUT request to the persons API is used.  
     // Then update the person with changes, and make other changes as needed.
     personNode.put("middleName": "Michael");
     EthosResponse ethosResponse = ethosProxyClient.put("persons", newId, personNode);
+```
 
-#### C# SDK:
-
+```csharp C# SDK Code Snippet
     // First build a filter to get the person.
     var criteriaFilterStr = new CriteriaFilter().WithSimpleCriteria("names", ("lastName", "Smith")).BuildCriteria();
     string myApiKey = "someApiKey";
@@ -85,7 +86,8 @@ To update an existing person record, a PUT request to the persons API is used.  
     personsObject [ "middleName" ] = "Michael";
     string newId = personsObject [ "id" ].ToString();
     EthosResponse personsResponse = await client.PutAsync( "persons", newId, personsObject );
-​
+```
+
 ### Step D:  Person record update in Banner ###
 The persons PUT request will return the full persons data model schema not just the properties included in the update request.
 ​
@@ -95,7 +97,9 @@ If after review of the response additional person record updates are required si
 ### Step F:  Post request to [persons](/openapi/persons/) ###
 Use a POST request to the persons API to create a new person record in Banner.  Only required properties are needed to create the person record but for efficiency you may want to include as much optional information as is known.  The record can be updated with additional information at a later time as needed.
 ​
-#### Java SDK:
+#### SDK Code Snippets
+
+```java Java SDK Code Snippet
 
     String myApiKey = "someApiKey";
     ObjectNode personNode = JsonNodeFactory.instance.objectNode();
@@ -106,8 +110,9 @@ Use a POST request to the persons API to create a new person record in Banner.  
     EthosProxyClient ethosProxyClient = new EthosClientBuilder(myApiKey).buildEthosProxyClient();
     EthosResponse ethosResponse = ethosProxyClient.post("persons", personNode);
     String newId = ethosResponse.getContentAsJson().get("id").asText();
+```
 
-#### C# SDK:
+```csharp C# SDK Code Snippet
     JObject personObj = new JObject();
     personObj [ "id" ] = "00000000-0000-0000-0000-000000000000";
     personObj [ "firstName" ] = "John";
@@ -118,7 +123,8 @@ Use a POST request to the persons API to create a new person record in Banner.  
     EthosResponse response = await proxyClient.PostAsync("persons", personObj);
     JObject personsObject = converter.ToJObjectSingle( response );
     string newId = personsObject [ "id" ].ToString();
-	
+```
+
 ### Step G:  Person record created in Banner ###
 A successful person POST request will return a new guid for the person in addition to the other successfully created detailed information. 
 ​
@@ -135,10 +141,3 @@ A successful person POST request will return a new guid for the person in additi
 - The institution may choose to mask some sensitive data within the persons API response even though the data was successfully updated by the POST request.  The header "x-content restricted/partial" denotes when restrictions prevent the API user from receiving the full schema response.
 - Subscribe to change notifications for persons to keep your data in sync with Banner.
 - Review the [Banner Ethos API Troubleshooting Article](https://ellucian.force.com/clients/s/article/Banner-Ethos-API-troublshooting)
-
-## Want to try the recipe yourself? ##
-
-To jump start your recipe development, download the Ethos SDK code needed to get started with this recipe for the respective SDK implementations.  This requires that your application contains the needed [Ethos Integration SDK](/developer-portal/sdk/) dependencies.
-
- >####[Download Java SDK recipe code](#)
- >####[Download C# SDK recipe code](#)
