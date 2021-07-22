@@ -37,7 +37,9 @@ oasDefinitions:
   bannerAcademicHonors: ./openapi/banner-academic-honors-6.0.yaml
   bannerAcademicPeriodEnrollmentStatuses: ./openapi/banner-academic-period-enrollment-statuses-7.0.yaml
   bannerAcademicPeriods: ./openapi/banner-academic-periods-16.1.0.yaml
+  bannerAdmissionDecisionTypes: ./openapi/banner-admission-decision-types.yaml
   bannerSectionRegistrations: ./openapi/banner-section-registrations-16.1.0.yaml
+  bannerSectionRegistrationStatuses: ./openapi/banner-section-registration-statuses-consolidated.yaml
   bannerSections: ./openapi/banner-sections-16.0.0.yaml
   bannerStudents: ./openapi/banner-students-16.0.0.yaml
   # Business APIs
