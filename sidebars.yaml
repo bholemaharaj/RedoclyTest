@@ -84,6 +84,9 @@ catalog:
       - label: Academic Periods
         pages:
         -  page: openapi/banner-academic-periods.page.yaml/*
+      - label: Admission Decision Types
+        pages:
+        -  page: openapi/banner-admission-decision-types.page.yaml/*
       - label: Courses
         pages:
           - page: openapi/business/courses.page.yaml/*
@@ -99,6 +102,9 @@ catalog:
       - label: Section Registrations
         pages:
         -  page: openapi/banner-section-registrations.page.yaml/*
+      - label: Section Registration Statuses
+        pages:
+        -  page: openapi/banner-section-registration-statuses-consolidated.page.yaml/*
       - label: Vendors
         pages:
         -  page: custom/dummy2.md

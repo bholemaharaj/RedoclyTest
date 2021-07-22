@@ -1,0 +1,412 @@
+openapi: 3.0.0
+info:
+  title: Section Registration Statuses
+  description: A person&#x27;s status with regard to registering for an activity.
+    
+    
+    Please refer to "API Integration Configuration Settings" section in the Banner Ethos API Handbook for details on API configuration settings that need to be configured for this API.
+  version: '8.0, 6.0'
+servers:
+- url: https://integrate.elluciancloud.com
+  description: Ethos Integration
+paths:
+  /api/section-registration-statuses:
+    get:
+      summary: Return all resources from STVRSTS
+      description: Returns a paged listing of all the section registration statuses from STVRSTS table. 
+        
+        
+        The 'status' property in the API is retrieved based on the STVRSTS_CODE mapped in API setting REGISTRATION.STATUS.REASON.V4. The voice type value stored in STVRSTS_VOICE_TYPE for the STVRSTS_CODE should match the mappings. 
+        
+        - The API publishes status.registrationStatus as 'registered', if the STVRSTS_CODE has STVRSTS_VOICE_TYPE ='R'
+        
+        - The API publishes status.registrationStatus as 'notRegistered', if the STVRSTS_CODE has STVRSTS_VOICE_TYPE ='W' or 'D' or 'L' 
+        
+        - If the voice type and mappings in API settings do not match the API returns error. 
+      security:
+        - BearerAuth: []
+      tags:
+        - section-registration-statuses
+      parameters:
+        - name: accept
+          in: header
+          required: true
+          description:  |
+            The version of the resource requested. Prefer to use only the whole MAJOR version.  See the semantic versioning topic in the API Standards from more information. 
+            ```
+            application/vnd.hedtech.integration.v8+json
+            application/vnd.hedtech.integration.v6+json
+            ```
+          schema:
+            type: string
+        - name: limit
+          in: query
+          required: false
+          description: The maximum number of resources requesting for this result set. Default page limit is 500 and upper limit is 1000.
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          required: false
+          description: The 0 based index for a collection of resources for the page requested.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/vnd.hedtech.integration.v8+json:
+              schema:
+                type: object
+              examples:
+                Banner:
+                  value:
+                    - code:  DD
+                      title: Course Drop/Delete
+                      id: 27e63cb1-0bd4-48f4-bb8c-2be7ce9a0de2
+                      headcountStatus:  exclude                      
+                      status:
+                        registrationStatus:  notRegistered
+                        sectionRegistrationStatusReason:  dropped
+                    - code:  RE
+                      title: Registered
+                      id: fcdf4931-172d-43a0-87c5-08a083f79503
+                      headcountStatus:  include                      
+                      status:
+                        registrationStatus:  registered
+                        sectionRegistrationStatusReason:  registered
+            application/vnd.hedtech.integration.v6+json:
+                  schema:
+                    type: object
+                  examples:
+                    Banner :
+                      value:
+                      - code:  DD
+                        title: Course Drop/Delete
+                        id: 27e63cb1-0bd4-48f4-bb8c-2be7ce9a0de2                        
+                        status:
+                          registrationStatus:  notRegistered
+                          sectionRegistrationStatusReason:  dropped                      
+                      - code:  RE
+                        title: Registered
+                        id: fcdf4931-172d-43a0-87c5-08a083f79503
+                        status:
+                          registrationStatus:  registered
+                          sectionRegistrationStatusReason:  registered
+          headers:
+            X-Media-Type:
+              description: The Ethos resource representation version
+              schema:
+                type: string
+            X-Total-Count:
+              description: Specifies the total number of resources that satisfy the query.
+              schema:
+                type: integer
+        '401':
+          description: Unauthorized
+        '404':
+          description: Resource not found
+        '500':
+          description: Server error, unexpected configuration or data
+  /api/section-registration-statuses/{id}:
+    get:
+      summary: Return the requested resource from STVRSTS
+      description: Return the one resource with the passed in identifier
+      security:
+        - BearerAuth: []
+      tags:
+        - section-registration-statuses
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: A global identifier of Section Registration Statuses for use in all external references
+          schema:
+            type: string
+            format: GUID
+            minimum: 1
+        - name: accept
+          in: header
+          required: true
+          description:  |
+            The version of the resource requested. Please refer to the API source documentation for detailed support information. Prefer to use only the whole MAJOR version. 
+            ```
+            application/vnd.hedtech.integration.v8+json
+            application/vnd.hedtech.integration.v6+json            
+            ```
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/vnd.hedtech.integration.v8+json:
+              schema:
+                type: object
+              examples:
+                Banner:
+                  value:
+                    - code:  DD
+                      title: Course Drop/Delete
+                      id: 27e63cb1-0bd4-48f4-bb8c-2be7ce9a0de2
+                      headcountStatus:  exclude                      
+                      status:
+                        registrationStatus:  notRegistered
+                        sectionRegistrationStatusReason:  dropped
+            application/vnd.hedtech.integration.v6+json:
+                  schema:
+                    type: object
+                  examples:
+                    Banner :
+                      value:
+                      - code:  DD
+                        title: Course Drop/Delete
+                        id: 27e63cb1-0bd4-48f4-bb8c-2be7ce9a0de2                        
+                        status:
+                          registrationStatus:  notRegistered
+                          sectionRegistrationStatusReason:  dropped           
+          headers:
+            X-Media-Type:
+              description: The Ethos resource representation version
+              schema:
+                type: string
+        '401':
+          description: Unauthorized
+        '404':
+          description: Resource not found
+        '500':
+          description: Server error, unexpected configuration or data
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+  schemas:
+      section-registration-statuses-8.0:
+        title: Section Registration Statuses (v8.0)
+        description: A person's status with regard to registering for an activity.
+        type: object
+        properties:
+          metadata:
+            title: Metadata
+            description: Metadata about the JSON payload
+            type: object
+            properties:
+              createdBy:
+                title: Created By
+                description: 'The name of the originator (user or system) of the data. This is informational
+                only, do not use in business logic!'
+                type: string
+              createdOn:
+                title: Created On
+                description: The date and time when the entity instance was created
+                oneOf:
+                  - type: string
+                    format: date-time
+                    pattern: '^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[0-1]|0[1-9]|[1-2][0-9])T(2[0-3]|[0-1][0-9]):([0-5][0-9]):([0-5][0-9])(\.[0-9]+)?(Z|[+-](?:2[0-3]|[0-1][0-9]):[0-5][0-9])?$'
+                  - type: string
+                    maxLength: 0
+              modifiedBy:
+                title: Modified By
+                description: 'The name of the modifier (user or system) of the data. This is informational only, do not use in business logic!'
+                type: string
+              modifiedOn:
+                title: Modified On
+                description: The date and time when the entity instance was last modified
+                oneOf:
+                  - type: string
+                    format: date-time
+                    pattern: '^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[0-1]|0[1-9]|[1-2][0-9])T(2[0-3]|[0-1][0-9]):([0-5][0-9]):([0-5][0-9])(\.[0-9]+)?(Z|[+-](?:2[0-3]|[0-1][0-9]):[0-5][0-9])?$'
+                  - type: string
+                    maxLength: 0
+            additionalProperties: false
+          id:
+            title: ID
+            description: A global identifier of the status
+            type: string
+            format: guid
+            pattern: '^[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}$'
+          code:
+            title: Code
+            description: The code for the status. This is generally unique within all registration statuses.
+            type: string
+          title:
+            title: Title
+            description: The full name of the status.
+            type: string
+            minLength: 1
+          description:
+            title: Description
+            description: A description of the status.
+            type: string
+          status:
+            title: Status
+            description: ''
+            oneOf:
+              - title: Not registered
+                description: A person is not registered in the section.
+                type: object
+                properties:
+                  registrationStatus:
+                    title: Registration Status
+                    description: The status of this person's registration in the section
+                    enum:
+                      - notRegistered
+                    type: string
+                  sectionRegistrationStatusReason:
+                    title: Reason
+                    description: Status reason for non-registration.
+                    enum:
+                      - pending
+                      - dropped
+                      - withdrawn
+                      - canceled
+                    type: string
+                additionalProperties: false
+                required:
+                  - registrationStatus
+                  - sectionRegistrationStatusReason
+              - title: Registered
+                description: A person is registered in the section.
+                type: object
+                properties:
+                  registrationStatus:
+                    title: Registration Status
+                    description: The status of this person's registration in the section.
+                    enum:
+                      - registered
+                    type: string
+                  sectionRegistrationStatusReason:
+                    title: Registered
+                    description: A person was registered.
+                    enum:
+                      - registered
+                    type: string
+                additionalProperties: false
+                required:
+                  - registrationStatus
+                  - sectionRegistrationStatusReason
+          headcountStatus:
+            title: Headcount Status
+            description: Indicates whether to include the registration of a section towards the head count.
+            oneOf:
+              - type: string
+                enum:
+                  - include
+                  - exclude
+              - type: string
+                maxLength: 0
+        required:
+          - id
+          - title
+          - status
+        additionalProperties: false
+      section-registration-statuses-6.0:        
+        title: Section Registration Statuses (v6.0)
+        description: A person's status with regard to registering for an activity.
+        type: object
+        properties:
+          metadata:
+            title: Metadata
+            description: Metadata about the JSON payload
+            type: object
+            properties:
+              createdBy:
+                title: Created By
+                description: 'The name of the originator (user or system) of the data. This is informational only, do not use in business logic!'
+                type: string
+              createdOn:
+                title: Created On
+                description: The date and time when the entity instance was created
+                oneOf:
+                  - type: string
+                    format: date-time
+                    pattern: '^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[0-1]|0[1-9]|[1-2][0-9])T(2[0-3]|[0-1][0-9]):([0-5][0-9]):([0-5][0-9])(\.[0-9]+)?(Z|[+-](?:2[0-3]|[0-1][0-9]):[0-5][0-9])?$'
+                  - type: string
+                    maxLength: 0
+              modifiedBy:
+                title: Modified By
+                description: 'The name of the modifier (user or system) of the data. This is informational only, do not use in business logic!'
+                type: string
+              modifiedOn:
+                title: Modified On
+                description: The date and time when the entity instance was last modified
+                oneOf:
+                  - type: string
+                    format: date-time
+                    pattern: '^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[0-1]|0[1-9]|[1-2][0-9])T(2[0-3]|[0-1][0-9]):([0-5][0-9]):([0-5][0-9])(\.[0-9]+)?(Z|[+-](?:2[0-3]|[0-1][0-9]):[0-5][0-9])?$'
+                  - type: string
+                    maxLength: 0
+            additionalProperties: false
+          id:
+            title: ID
+            description: A global identifier of the status
+            type: string
+            format: guid
+            pattern: '^[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}$'
+          code:
+            title: Code
+            description: The code for the status. This is generally unique within all registration statuses.
+            type: string
+          title:
+            title: Title
+            description: The full name of the status.
+            type: string
+            minLength: 1
+          description:
+            title: Description
+            description: A description of the status.
+            type: string
+          status:
+            title: Status
+            description: ''
+            oneOf:
+              - title: Not registered
+                description: A person is not registered in the section.
+                type: object
+                properties:
+                  registrationStatus:
+                    title: Registration Status
+                    description: The status of this person's registration in the section
+                    enum:
+                      - notRegistered
+                    type: string
+                  sectionRegistrationStatusReason:
+                    title: Reason
+                    description: Status reason for non-registration.
+                    enum:
+                      - pending
+                      - dropped
+                      - withdrawn
+                      - canceled
+                    type: string
+                additionalProperties: false
+                required:
+                  - registrationStatus
+                  - sectionRegistrationStatusReason
+              - title: Registered
+                description: A person is registered in the section.
+                type: object
+                properties:
+                  registrationStatus:
+                    title: Registration Status
+                    description: The status of this person's registration in the section.
+                    enum:
+                      - registered
+                    type: string
+                  sectionRegistrationStatusReason:
+                    title: Registered
+                    description: A person was registered.
+                    enum:
+                      - registered
+                    type: string
+                additionalProperties: false
+                required:
+                  - registrationStatus
+                  - sectionRegistrationStatusReason
+        required:
+          - id
+          - title
+          - status
+        additionalProperties: false
+        

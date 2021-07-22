@@ -1,0 +1,310 @@
+openapi: 3.0.0
+info:
+  title: Admission Decision Types
+  description: The list of valid admission decision types.
+  version: 11.0 , 6.0 #list the number of versions 
+servers:
+- url: https://integrate.elluciancloud.com
+  description: Ethos Integration
+paths:
+
+####### GET ALL Response #####
+  /api/admission-decision-types:
+    get:
+      summary: Return all resources 
+      description: Returns a paged listing of all the admission-decision-types from STVAPDC table in the Banner system.
+      security:
+        - BearerAuth: []
+      tags:
+        - admission-decision-types
+      parameters:
+        - name: accept
+          in: header
+          required: true
+          description:  |
+            The version of the resource requested. Prefer to use only the whole MAJOR version.  See the semantic versioning topic in the API Standards from more information. 
+            ```
+            application/vnd.hedtech.integration.v11+json 
+            application/vnd.hedtech.integration.v6+json
+            ```
+          schema:
+            type: string
+        - name: limit
+          in: query
+          required: false
+          description: The maximum number of resources requesting for this result set. Page limit is 500 and upper limit is 1000.
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          required: false
+          description: The 0 based index for a collection of resources for the page requested.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/vnd.hedtech.integration.v11+json:
+              schema:
+                type: object
+                items:
+                  $ref: "#/components/schemas/admission-decision-types-v11.0"
+              examples:
+                Banner:
+                  value:
+                    - id: 192a66d2-3719-4cd9-b078-d6fdf73578ff
+                      title: Application Accepted
+                      description: Admission application accepted
+                      code: IAA
+                      decisionCategories:
+                      - complete
+                      - accepted
+                    - id: 02fe8a28-a747-4c7f-bf71-09b4a6620232
+                      title: Application Denied
+                      description: Admission application denied
+                      code: IAD
+                      decisionCategories:
+                      - rejected
+                      - withdrawn
+                    - id: e2e438ce-0b2c-4606-afd7-355b17e19fad
+                      title: Application Pending
+                      description: Admission application pending
+                      code: IAP
+                      decisionCategories:
+                      - waitlisted
+                      - movedToStudent
+            application/vnd.hedtech.integration.v6+json:
+                  schema:
+                    type: object
+                    items:
+                      $ref: "#/components/schemas/admission-decision-types-v6.0"
+                  examples:
+                    Banner :
+                      value:
+                      - id: 02fe8a28-a747-4c7f-bf71-09b4a6620232
+                        title: Application Denied
+                        description: Admission application denied
+                        code: IAD
+                      - id: 192a66d2-3719-4cd9-b078-d6fdf73578ff
+                        title: Application Accepted
+                        description: Admission application accepted
+                        code: IAA
+                      - id: e2e438ce-0b2c-4606-afd7-355b17e19fad
+                        title: Application Pending
+                        description: Admission application pending
+                        code: IAP
+          headers:
+            X-Media-Type:
+              description: The Ethos resource representation version
+              schema:
+                type: string
+            X-Total-Count:
+              description: Specifies the total number of resources that satisfy the query.
+              schema:
+                type: integer
+
+        '401':
+          description: Unauthorized
+        '404':
+          description: Resource not found
+        '500':
+          description: Server error, unexpected configuration or data
+          
+####### GET Response by ID #####
+  /api/admission-decision-types/{id}:
+    get:
+      summary: Return the requested resource 
+      description: Return the one admission decision type record from STVAPDC table with the passed in identifier
+      security:
+        - BearerAuth: []
+      tags:
+        - admission-decision-types
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: A global identifier of Admission Decision Types for use in all external references
+          schema:
+            type: string
+            format: GUID
+            minimum: 1
+        - name: accept
+          in: header
+          required: true
+          description:  |
+            The version of the resource requested. Please refer to the API source documentation for detailed support information. Prefer to use only the whole MAJOR version. 
+            ```
+            application/vnd.hedtech.integration.v11+json
+            application/vnd.hedtech.integration.v6+json
+            ```
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/vnd.hedtech.integration.v11+json:
+              schema:
+                type: object
+                items:
+                  $ref: "#/components/schemas/admission-decision-types-v11.0"
+              examples:
+                Banner:
+                  value:
+                    - id: e2e438ce-0b2c-4606-afd7-355b17e19fad
+                      title: Application Pending
+                      description: Admission application pending
+                      code: IAP
+                      decisionCategories:
+                      - waitlisted
+                      - movedToStudent
+            application/vnd.hedtech.integration.v6+json:
+                  schema:
+                    type: object
+                    items:
+                      $ref: "#/components/schemas/admission-decision-types-v6.0"
+                  examples:
+                    Banner :
+                      value:
+                      - id: 02fe8a28-a747-4c7f-bf71-09b4a6620232
+                        title: Application Denied
+                        description: Admission application denied
+                        code: IAD
+          description: Success
+          headers:
+            X-Media-Type:
+              description: The Ethos resource representation version
+              schema:
+                type: string
+              
+            
+        '401':
+          description: Unauthorized
+        '404':
+          description: Resource not found
+        '500':
+          description: Server error, unexpected configuration or data
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+  schemas:
+    admission-decision-types-v11.0:
+      title: Admission Decision Types (v11.0)
+      description: The list of valid admission decision types.
+      type: object
+      properties:
+        metadata:
+          title: Metadata
+          description: Metadata about the JSON payload
+          type: object
+          properties:
+            createdBy:
+              title: Created By
+              description: The name of the originator (user or system) of the data. This
+                is informational only, do not use in business logic!
+              type: string
+            createdOn:
+              title: Created On
+              description: The date and time when the entity instance was created
+              oneOf:
+              - type: string
+                format: date-time
+                pattern: "^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[0-1]|0[1-9]|[1-2][0-9])T(2[0-3]|[0-1][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-](?:2[0-3]|[0-1][0-9]):[0-5][0-9])?$"
+              - type: string
+                maxLength: 0
+            modifiedBy:
+              title: Modified By
+              description: The name of the modifier (user or system) of the data. This is
+                informational only, do not use in business logic!
+              type: string
+            modifiedOn:
+              title: Modified On
+              description: The date and time when the entity instance was last modified
+              oneOf:
+              - type: string
+                format: date-time
+                pattern: "^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[0-1]|0[1-9]|[1-2][0-9])T(2[0-3]|[0-1][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-](?:2[0-3]|[0-1][0-9]):[0-5][0-9])?$"
+              - type: string
+                maxLength: 0
+          additionalProperties: false
+        id:
+          title: ID
+          description: The global identifier of the type of decision on admission application
+          type: string
+          format: guid
+          pattern: "^[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}$"
+        title:
+          title: Title
+          description: The full name of the type of decision on admission application
+          type: string
+          minLength: 1
+        description:
+          title: Description
+          description: The description of the type of decision on admission application
+          type: string
+        code:
+          title: Code
+          description: The code of the type of decision on admission application
+          type: string
+        decisionCategories:
+          title: Decision Categories
+          description: The list of categories that correspond to a decision type.
+          type: array
+          items:
+            enum:
+            - applied
+            - complete
+            - accepted
+            - studentAccepted
+            - waitlisted
+            - rejected
+            - movedToStudent
+            - withdrawn
+            type: string
+      required:
+      - id
+      - title
+      additionalProperties: false
+    admission-decision-types-v6.0:
+      title: Admission Decision Types (v6.0)
+      description: The list of valid admission decision types
+      type: object
+      properties:
+        metadata:
+          title: Metadata
+          description: Metadata about the JSON payload
+          type: object
+          properties:
+            createdBy:
+              title: Created By
+              description: The name of the originator (user or system) of the data. This
+                is informational only, do not use in business logic!
+              type: string
+            createdOn:
+              title: Created On
+              description: The date and time when the entity instance was created
+              oneOf:
+              - type: string
+                format: date-time
+                pattern: "^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[0-1]|0[1-9]|[1-2][0-9])T(2[0-3]|[0-1][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-](?:2[0-3]|[0-1][0-9]):[0-5][0-9])?$"
+              - type: string
+                maxLength: 0
+            modifiedBy:
+              title: Modified By
+              description: The name of the modifier (user or system) of the data. This is
+                informational only, do not use in business logic!
+              type: string
+            modifiedOn:
+              title: Modified On
+              description: The date and time when the entity instance was last modified
+              oneOf:
+              - type: string
+                format: date-time
+                pattern: "^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[0-1]|0[1-9]|[1-2][0-9])T(2[0-3]|[0-1][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-](?:2[0-3]|[0-1][0-9]):[0-5][0-9])?$"
+              - type: string
+                maxLength: 0
+          additionalProperties: false
+
+
