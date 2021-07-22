@@ -59,10 +59,10 @@ alternative:
 catalog:
   - page: developer-portal/api-catalog.mdx
     label: API Catalog
-  - group: Petstore reference
-    expanded: false
-    pages:
-      - page: openapi/reference.page.yaml/*
+  # - group: Petstore reference
+  #   expanded: false
+  #   pages:
+  #     - page: openapi/reference.page.yaml/*
   - group: Ethos APIs
     expanded: false
     pages:
