@@ -2,39 +2,11 @@
 title: List of All APIs
 ---
 
-import { MyList } from '../../components/GetAllApis.tsx';
-//import * as React from 'react';
-import { StaticQuery, graphql } from "gatsby";
+import { HomePage } from '../../components/HomePage.tsx'
+import { ComponentName } from '../../components/GetAllApis.tsx'
+//import { StaticQuery, graphql } from "gatsby";
 
 # Get a list of all APIs
 
-<MyList />
-
-<StaticQuery
-    query={graphql`
-      {
-        allSidebar(filter: {name: {eq: "catalog"}}) {
-          edges {
-            node {
-              id
-              name
-              pages {
-                page
-                group
-                expanded
-                label
-                pages {
-                  label
-                  separator
-                  pages {
-                    page
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    `}
-    render={data => <pre>{JSON.stringify(data, null, 4)}</pre>}
-  ></StaticQuery>
+<HomePage />
+<ComponentName />
