@@ -1,160 +1,176 @@
 {
-    "data": {
-      "allSidebar": {
-        "edges": [
-          {
-            "node": {
-              "pages": [
-                {
-                  "group": null,
-                  "page": "developer-portal/api-catalog.mdx",
-                  "pages": null
-                },
-                {
-                  "group": "Ethos APIs",
-                  "page": null,
-                  "pages": [
-                    {
-                      "label": "Academic Catalogs",
-                      "pages": [
-                        {
-                          "page": "openapi/banner-academic-catalogs.page.yaml/*"
-                        }
-                      ]
-                    },
-                    {
-                      "label": "Academic Credentials",
-                      "pages": [
-                        {
-                          "page": "openapi/banner-academic-credentials.page.yaml/*"
-                        }
-                      ]
-                    },
-                    {
-                      "label": "Academic Disciplines",
-                      "pages": [
-                        {
-                          "page": "openapi/banner-academic-disciplines.page.yaml/*"
-                        }
-                      ]
-                    },
-                    {
-                      "label": "Academic Honors",
-                      "pages": [
-                        {
-                          "page": "openapi/banner-academic-honors.page.yaml/*"
-                        }
-                      ]
-                    },
-                    {
-                      "label": "Academic Period Enrollment Statuses",
-                      "pages": [
-                        {
-                          "page": "openapi/banner-academic-period-enrollment-statuses.page.yaml/*"
-                        }
-                      ]
-                    },
-                    {
-                      "label": "Academic Periods",
-                      "pages": [
-                        {
-                          "page": "openapi/banner-academic-periods.page.yaml/*"
-                        }
-                      ]
-                    },
-                    {
-                      "label": "Admission Decision Types",
-                      "pages": [
-                        {
-                          "page": "openapi/banner-admission-decision-types.page.yaml/*"
-                        }
-                      ]
-                    },
-                    {
-                      "label": "Courses",
-                      "pages": [
-                        {
-                          "page": "openapi/business/courses.page.yaml/*"
-                        }
-                      ]
-                    },
-                    {
-                      "label": "Persons",
-                      "pages": [
-                        {
-                          "page": "openapi/persons.page.yaml/*"
-                        }
-                      ]
-                    },
-                    {
-                      "label": "Sections",
-                      "pages": [
-                        {
-                          "page": "openapi/banner-sections.page.yaml/*"
-                        }
-                      ]
-                    },
-                    {
-                      "label": "Students",
-                      "pages": [
-                        {
-                          "page": "openapi/banner-students.page.yaml/*"
-                        }
-                      ]
-                    },
-                    {
-                      "label": "Section Registrations",
-                      "pages": [
-                        {
-                          "page": "openapi/banner-section-registrations.page.yaml/*"
-                        }
-                      ]
-                    },
-                    {
-                      "label": "Section Registration Statuses",
-                      "pages": [
-                        {
-                          "page": "openapi/banner-section-registration-statuses-consolidated.page.yaml/*"
-                        }
-                      ]
-                    },
-                    {
-                      "label": "Vendors",
-                      "pages": [
-                        {
-                          "page": "custom/dummy2.md"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "group": "Business APIs",
-                  "page": null,
-                  "pages": [
-                    {
-                      "label": "Admission Application Checklist",
-                      "pages": [
-                        {
-                          "page": "openapi/business/admission-application-checklist.page.yaml/*"
-                        }
-                      ]
-                    },
-                    {
-                      "label": "Catalog Element Fours",
-                      "pages": [
-                        {
-                          "page": "openapi/business/catalog-element-fours.page.yaml/*"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
+  "data": {
+    "allSidebar": {
+      "edges": [
+        {
+          "node": {
+            "pages": [
+              {
+                "group": null,
+                "page": "developer-portal/api-catalog.mdx",
+                "pages": null
+              },
+              {
+                "group": "Ethos APIs",
+                "page": "developer-portal/api-catalog/ethosApis.mdx",
+                "pages": [
+                  {
+                    "page": null,
+                    "label": "Academic Catalogs",
+                    "pages": [
+                      {
+                        "page": "openapi/banner-academic-catalogs.page.yaml/*"
+                      }
+                    ]
+                  },
+                  {
+                    "page": null,
+                    "label": "Academic Credentials",
+                    "pages": [
+                      {
+                        "page": "openapi/banner-academic-credentials.page.yaml/*"
+                      }
+                    ]
+                  },
+                  {
+                    "page": null,
+                    "label": "Academic Disciplines",
+                    "pages": [
+                      {
+                        "page": "openapi/banner-academic-disciplines.page.yaml/*"
+                      }
+                    ]
+                  },
+                  {
+                    "page": null,
+                    "label": "Academic Honors",
+                    "pages": [
+                      {
+                        "page": "openapi/banner-academic-honors.page.yaml/*"
+                      }
+                    ]
+                  },
+                  {
+                    "page": null,
+                    "label": "Academic Period Enrollment Statuses",
+                    "pages": [
+                      {
+                        "page": "openapi/banner-academic-period-enrollment-statuses.page.yaml/*"
+                      }
+                    ]
+                  },
+                  {
+                    "page": null,
+                    "label": "Academic Periods",
+                    "pages": [
+                      {
+                        "page": "openapi/banner-academic-periods.page.yaml/*"
+                      }
+                    ]
+                  },
+                  {
+                    "page": null,
+                    "label": "Admission Decision Types",
+                    "pages": [
+                      {
+                        "page": "openapi/banner-admission-decision-types.page.yaml/*"
+                      }
+                    ]
+                  },
+                  {
+                    "page": null,
+                    "label": "Persons",
+                    "pages": [
+                      {
+                        "page": "openapi/persons.page.yaml/*"
+                      }
+                    ]
+                  },
+                  {
+                    "page": null,
+                    "label": "Courses",
+                    "pages": [
+                      {
+                        "page": "openapi/courses.page.yaml/*"
+                      }
+                    ]
+                  },
+                  {
+                    "page": null,
+                    "label": "Sections",
+                    "pages": [
+                      {
+                        "page": "openapi/banner-sections.page.yaml/*"
+                      }
+                    ]
+                  },
+                  {
+                    "page": null,
+                    "label": "Students",
+                    "pages": [
+                      {
+                        "page": "openapi/banner-students.page.yaml/*"
+                      }
+                    ]
+                  },
+                  {
+                    "page": null,
+                    "label": "Section Registrations",
+                    "pages": [
+                      {
+                        "page": "openapi/banner-section-registrations.page.yaml/*"
+                      }
+                    ]
+                  },
+                  {
+                    "page": null,
+                    "label": "Section Registration Statuses",
+                    "pages": [
+                      {
+                        "page": "openapi/banner-section-registration-statuses-consolidated.page.yaml/*"
+                      }
+                    ]
+                  },
+                  {
+                    "page": null,
+                    "label": "Vendors",
+                    "pages": [
+                      {
+                        "page": "openapi/vendors.page.yaml/*"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Business APIs",
+                "page": "developer-portal/api-catalog/businessApis.mdx",
+                "pages": [
+                  {
+                    "page": null,
+                    "label": "Admission Application Checklist",
+                    "pages": [
+                      {
+                        "page": "openapi/business/admission-application-checklist.page.yaml/*"
+                      }
+                    ]
+                  },
+                  {
+                    "page": null,
+                    "label": "Catalog Element Fours",
+                    "pages": [
+                      {
+                        "page": "openapi/business/catalog-element-fours.page.yaml/*"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
           }
-        ]
-      }
-    },
-    "extensions": {}
-  }
+        }
+      ]
+    }
+  },
+  "extensions": {}
+}

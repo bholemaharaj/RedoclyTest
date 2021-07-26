@@ -31,7 +31,7 @@ export function GetApisByGroup(group){
       url = "/" + url;
     }
     
-    response.push(<a href={url}><ul style={{backgroundColor:'#E6ECEE', marginTop:'0', marginBottom:'1em', paddingTop:'0.5em', height:'2.5em'}} key={element.label}>{element.label}</ul></a>)
+    response.push(<a href={url}><ul key={element.label} style={{backgroundColor:'#E6ECEE', marginTop:'0', marginBottom:'1em', paddingTop:'0.5em', height:'2.5em'}}>{element.label}</ul></a>)
   });
 
   return <div>{response}</div>;
