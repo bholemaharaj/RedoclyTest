@@ -1,0 +1,304 @@
+openapi: 3.0.0
+info:
+  title: Vendors
+  description:  |
+        The person or organization that offers products or services to an institution. The information about the classification of vendor, the conditions for vendor payment, the accounts payable source, the status of the vendor, the hold reasons if a payment is put on hold, the dates when the vendor was registered and last active, the default currency used to deal with the vendor, address defaults, the federal tax id number, associated tax forms, and any comments related to the vendor is published.
+  version: '11.1.0'
+servers:
+- url: https://integrate.elluciancloud.com/api
+  description: Ellucian Ethos Integration API 
+paths:
+  /vendors:
+    get:
+      summary: Returns resources from FTVVEND 
+      description: |
+        Returns all the records from FTVVEND.
+      security:
+        - BearerAuth: []
+      tags:
+        - vendors
+      parameters:
+        - name: accept
+          in: header
+          required: true
+          description:  |
+            The version of the resource requested. Prefer to use only the whole MAJOR version.  See the semantic versioning topic in the API Standards from more information.
+            ```
+            application/vnd.hedtech.integration.v11+json
+            ```
+          schema:
+            type: string
+        - name: limit
+          in: query
+          required: false
+          description: The maximum number of resources requesting for this result set. Default page limit is 500 and upper limit is 1000.
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          required: false
+          description: The 0 based index for a collection of resources for the page requested.
+          schema:
+            type: integer
+        - name: criteria
+          in: query
+          required: false
+          schema:
+            type: object
+          description: |
+            ### Organization  
+            Detail information of the organization acting as the vendor.
+             ```
+            /vendors?criteria={"vendorDetail":"0d316912-b8d1-4cbf-ab62-e7bf1f2be576"}
+            ```
+            ```
+            /vendors?criteria={"vendorDetail":{"organization":{"id":"0d316912-b8d1-4cbf-ab62-e7bf1f2be576"}}}
+            ```
+            ### Person  
+            Detail information of the person acting as the vendor.
+            ```
+            /vendors?criteria={"vendorDetail":{"person":{"id":"0d316912-b8d1-4cbf-ab62-e7bf1f2be576"}}}
+            ```
+            ### Institution  
+            Not Supported
+            
+            ### Classifications  
+            The vendor's classification (E.g. federal contract, small business, etc. )
+            ```
+            /vendors?criteria={"classifications":"a174ecf5-15c8-4532-b60c-225f33616de4"}
+            ```
+            ```
+            /vendors?criteria={"classifications": [{"id":"a174ecf5-15c8-4532-b60c-225f33616de4"}]}
+            ```
+            ### Statuses  
+            The statuses (active, approved, stop payment) that apply to the vendor.
+            ```
+            /vendors?criteria={"statuses":["active","approved"]}
+            ```
+            ### Related Vendors Type  
+            The type of related vendor.
+            ```
+            /vendors?criteria={"relatedVendors":[{"type":"paymentVendor"}]}
+            ```
+            ### Related Reference Type  
+            The type of related reference.
+            ```
+            /vendors?criteria={"relatedReference":[{"type":"parentVendor"}]}
+            ```
+            ### Types  
+            The type(s) of vendor, i.e. Procurement, eProcurement, or Travel.
+            ```
+            /vendors?criteria={"types":["procurement","eProcurement"]}
+            ```
+            ### Tax ID  
+            The federal tax identification number for the vendor.
+            ```
+            /vendors?criteria={"taxId":"9900"}
+            ```
+        - name: vendorType
+          in: query
+          required: false
+          schema:
+            type: object
+          description: |
+            ### Vendor Type  
+            Returns all vendors for the given vendorType
+            ```
+            /vendors?vendorType={"vendorType":"procurement"}
+            ```
+            
+        - name: vendorDetail
+          in: query
+          required: false
+          schema:
+            type: object
+          description: |
+            ### Vendor Detail  
+            Filter based on the person, organization or institution acting as the vendor.
+            ```
+            /vendors?vendorDetail={"vendorDetail": {"id":"1d6dff87-982d-4291-a94b-0f76e7c4277c"}}
+            ```
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+          headers:
+            X-Media-Type:
+              description: application/vnd.hedtech.integration.v11.1.0+json
+              schema:
+                type: string
+            X-Total-Count:
+              description: Specifies the total number of resources that satisfy the query.
+              schema:
+                type: integer
+        '400':
+          description: Bad Request 
+        '401':
+          description: Unauthorized  
+        '403':
+          description: Permission Denied
+        '404':
+          description: Resource not found
+        '500':
+          description: Server error, unexpected configuration or data
+    post:
+      summary: Create a new resource in FTVVEND 
+      description:  |
+        Creates a vendor record in FTVVEND.
+        
+        POST requests must include a nil GUID value ("00000000-0000-0000-0000-000000000000") for the root id property.
+
+        
+        Note:
+        If a create request to create a vendor with startOn as future dated is sent, the API does not allow to create a futured dated vendor record.
+      security:
+        - BearerAuth: []
+      tags:
+        - vendors
+      parameters:
+        - name: accept
+          in: header
+          required: true
+          description:  |
+            The version of the resource requested. Please refer to the API source documentation for detailed support information. Prefer to use only the whole MAJOR version. 
+            ```
+            application/vnd.hedtech.integration.v11+json
+            ```
+          schema:
+            type: string
+        - name: content type
+          in: header
+          required: true
+          description:  |
+            The version of the resource supplied in the request. Please refer to the API source documentation for detailed support information. Prefer to use only the whole MAJOR version. 
+            ```
+            application/vnd.hedtech.integration.v11+json
+            ```
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          headers:
+            X-Media-Type:
+              description: application/vnd.hedtech.integration.v11.1.0+json
+              schema:
+                type: string
+        '400':
+          description: Bad Request 
+        '401':
+          description: Unauthorized  
+        '403':
+          description: Permission Denied
+        '404':
+          description: Resource not found
+        '500':
+          description: Server error, unexpected configuration or data
+  /vendors/{id}:
+    get:
+      summary: Return the requested resource from FTVVEND 
+      description:  |
+        Returns a record from FTVVEND with the passed in identifier.
+      security:
+        - BearerAuth: []
+      tags:
+        - vendors
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: A global identifier of the resource for use in all external references
+          schema:
+            type: string
+            format: GUID
+            minimum: 1
+        - name: accept
+          in: header
+          required: true
+          description:  |
+            The version of the resource requested. Please refer to the API source documentation for detailed support information. Prefer to use only the whole MAJOR version. 
+            ```
+            application/vnd.hedtech.integration.v11+json
+            ```
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          headers:
+            X-Media-Type:
+              description: application/vnd.hedtech.integration.v11.1.0+json
+              schema:
+                type: string
+        '400':
+          description: Bad Request 
+        '401':
+          description: Unauthorized  
+        '403':
+          description: Permission Denied
+        '404':
+          description: Resource not found
+        '500':
+          description: Server error, unexpected configuration or data
+    put:
+      summary: Update the requested resource from FTVVEND 
+      description:  |
+        Updates a vendor record in FTVVEND for the passed in identifier.
+        
+      security:
+        - BearerAuth: []
+      tags:
+        - vendors
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: A global identifier of Vendors for use in all external references
+          schema:
+            type: string
+            format: GUID
+            minimum: 1
+        - name: accept
+          in: header
+          required: true
+          description:  |
+            The version of the resource requested. Please refer to the API source documentation for detailed support information. Prefer to use only the whole MAJOR version. 
+            ```
+            application/vnd.hedtech.integration.v11+json 
+            ```
+          schema:
+            type: string
+        - name: content type
+          in: header
+          required: true
+          description:  |
+            The version of the resource supplied in the request. Please refer to the API source documentation for detailed support information. Prefer to use only the whole MAJOR version. 
+            ```
+            application/vnd.hedtech.integration.v11+json 
+            ```
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          headers:
+            X-Media-Type:
+              description: application/vnd.hedtech.integration.v11.1.0+json
+              schema:
+                type: string
+        '400':
+          description: Bad Request 
+        '401':
+          description: Unauthorized  
+        '403':
+          description: Permission Denied
+        '500':
+          description: Server error, unexpected configuration or data
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer

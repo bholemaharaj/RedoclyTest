@@ -2,27 +2,27 @@ openapi: 3.0.0
 info:
   title: Section Registration Statuses
   description: A person&#x27;s status with regard to registering for an activity.
-    
-    
+
+
     Please refer to "API Integration Configuration Settings" section in the Banner Ethos API Handbook for details on API configuration settings that need to be configured for this API.
   version: '8.0, 6.0'
 servers:
-- url: https://integrate.elluciancloud.com
+- url: https://integrate.elluciancloud.com/api
   description: Ethos Integration
 paths:
-  /api/section-registration-statuses:
+  /section-registration-statuses:
     get:
       summary: Return all resources from STVRSTS
-      description: Returns a paged listing of all the section registration statuses from STVRSTS table. 
-        
-        
-        The 'status' property in the API is retrieved based on the STVRSTS_CODE mapped in API setting REGISTRATION.STATUS.REASON.V4. The voice type value stored in STVRSTS_VOICE_TYPE for the STVRSTS_CODE should match the mappings. 
-        
+      description: Returns a paged listing of all the section registration statuses from STVRSTS table.
+
+
+        The 'status' property in the API is retrieved based on the STVRSTS_CODE mapped in API setting REGISTRATION.STATUS.REASON.V4. The voice type value stored in STVRSTS_VOICE_TYPE for the STVRSTS_CODE should match the mappings.
+
         - The API publishes status.registrationStatus as 'registered', if the STVRSTS_CODE has STVRSTS_VOICE_TYPE ='R'
-        
-        - The API publishes status.registrationStatus as 'notRegistered', if the STVRSTS_CODE has STVRSTS_VOICE_TYPE ='W' or 'D' or 'L' 
-        
-        - If the voice type and mappings in API settings do not match the API returns error. 
+
+        - The API publishes status.registrationStatus as 'notRegistered', if the STVRSTS_CODE has STVRSTS_VOICE_TYPE ='W' or 'D' or 'L'
+
+        - If the voice type and mappings in API settings do not match the API returns error.
       security:
         - BearerAuth: []
       tags:
@@ -32,7 +32,7 @@ paths:
           in: header
           required: true
           description:  |
-            The version of the resource requested. Prefer to use only the whole MAJOR version.  See the semantic versioning topic in the API Standards from more information. 
+            The version of the resource requested. Prefer to use only the whole MAJOR version.  See the semantic versioning topic in the API Standards from more information.
             ```
             application/vnd.hedtech.integration.v8+json
             application/vnd.hedtech.integration.v6+json
@@ -64,14 +64,14 @@ paths:
                     - code:  DD
                       title: Course Drop/Delete
                       id: 27e63cb1-0bd4-48f4-bb8c-2be7ce9a0de2
-                      headcountStatus:  exclude                      
+                      headcountStatus:  exclude
                       status:
                         registrationStatus:  notRegistered
                         sectionRegistrationStatusReason:  dropped
                     - code:  RE
                       title: Registered
                       id: fcdf4931-172d-43a0-87c5-08a083f79503
-                      headcountStatus:  include                      
+                      headcountStatus:  include
                       status:
                         registrationStatus:  registered
                         sectionRegistrationStatusReason:  registered
@@ -83,10 +83,10 @@ paths:
                       value:
                       - code:  DD
                         title: Course Drop/Delete
-                        id: 27e63cb1-0bd4-48f4-bb8c-2be7ce9a0de2                        
+                        id: 27e63cb1-0bd4-48f4-bb8c-2be7ce9a0de2
                         status:
                           registrationStatus:  notRegistered
-                          sectionRegistrationStatusReason:  dropped                      
+                          sectionRegistrationStatusReason:  dropped
                       - code:  RE
                         title: Registered
                         id: fcdf4931-172d-43a0-87c5-08a083f79503
@@ -108,7 +108,7 @@ paths:
           description: Resource not found
         '500':
           description: Server error, unexpected configuration or data
-  /api/section-registration-statuses/{id}:
+  /section-registration-statuses/{id}:
     get:
       summary: Return the requested resource from STVRSTS
       description: Return the one resource with the passed in identifier
@@ -129,10 +129,10 @@ paths:
           in: header
           required: true
           description:  |
-            The version of the resource requested. Please refer to the API source documentation for detailed support information. Prefer to use only the whole MAJOR version. 
+            The version of the resource requested. Please refer to the API source documentation for detailed support information. Prefer to use only the whole MAJOR version.
             ```
             application/vnd.hedtech.integration.v8+json
-            application/vnd.hedtech.integration.v6+json            
+            application/vnd.hedtech.integration.v6+json
             ```
           schema:
             type: string
@@ -149,7 +149,7 @@ paths:
                     - code:  DD
                       title: Course Drop/Delete
                       id: 27e63cb1-0bd4-48f4-bb8c-2be7ce9a0de2
-                      headcountStatus:  exclude                      
+                      headcountStatus:  exclude
                       status:
                         registrationStatus:  notRegistered
                         sectionRegistrationStatusReason:  dropped
@@ -161,10 +161,10 @@ paths:
                       value:
                       - code:  DD
                         title: Course Drop/Delete
-                        id: 27e63cb1-0bd4-48f4-bb8c-2be7ce9a0de2                        
+                        id: 27e63cb1-0bd4-48f4-bb8c-2be7ce9a0de2
                         status:
                           registrationStatus:  notRegistered
-                          sectionRegistrationStatusReason:  dropped           
+                          sectionRegistrationStatusReason:  dropped
           headers:
             X-Media-Type:
               description: The Ethos resource representation version
@@ -301,7 +301,7 @@ components:
           - title
           - status
         additionalProperties: false
-      section-registration-statuses-6.0:        
+      section-registration-statuses-6.0:
         title: Section Registration Statuses (v6.0)
         description: A person's status with regard to registering for an activity.
         type: object
@@ -409,4 +409,3 @@ components:
           - title
           - status
         additionalProperties: false
-        

@@ -4,12 +4,24 @@ info:
   description: Persons API
   version: 1.0.0
 servers:
-  - url: "https://ellucian.getsandbox.com:443"
+  - url: https://integrate.elluciancloud.com/api
     description: Ethos Persons API
 paths:
   /persons:
     get:
+      security:
+        - BearerAuth: []
       parameters:
+        - name: accept
+          in: header
+          required: true
+          description:  |
+            The version of the resource requested. Please refer to the API source documentation for detailed support information. Prefer to use only the whole MAJOR version.
+            ```
+            application/vnd.hedtech.integration.v12.3.0+json
+            ```
+          schema:
+            type: string
         - name: criteria
           in: query
           description: Criteria to filter by in JSON format.
@@ -196,14 +208,12 @@ paths:
                   $ref: "#/components/schemas/persons-12.3.0"
         "401":
           description: Failure. Unauthorized
-security:
-  - ApiKeyAuth: ["api-7f00fbee-045f-4841-9e1d-c486e0197df5"]
 components:
   securitySchemes:
-      ApiKeyAuth:        # arbitrary name for the security scheme
-        type: apiKey
-        in: header       # can be "header", "query" or "cookie"
-        name: API-Key        
+    BearerAuth:
+      type: http
+      scheme: bearer
+      in: header
   schemas:
     persons-12.0.0:
       type: object

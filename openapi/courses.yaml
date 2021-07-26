@@ -4,12 +4,24 @@ info:
   description: Courses API's
   version: 1.0.0
 servers:
-  - url: "https://ellucian.getsandbox.com:443"
+  - url: https://integrate.elluciancloud.com/api
     description: Ethos Courses API
 paths:
   /courses:
     get:
+      security:
+        - BearerAuth: []
       parameters:
+        - name: accept
+          in: header
+          required: true
+          description:  |
+            The version of the resource requested. Please refer to the API source documentation for detailed support information. Prefer to use only the whole MAJOR version.
+            ```
+            application/vnd.hedtech.integration.v16.1.0+json
+            ```
+          schema:
+            type: string
         - name: criteria
           in: query
           description: Criteria to filter by in JSON format.
@@ -65,14 +77,7 @@ paths:
                           - type:
                               id: 2657133e-4206-415e-aba6-0ced840bd036
                               value: Cost Accounting for Accountants
-security:
-  - ApiKeyAuth: ["api-7f00fbee-045f-4841-9e1d-c486e0197df5"]
 components:
-  securitySchemes:
-      ApiKeyAuth:        # arbitrary name for the security scheme
-        type: apiKey
-        in: header       # can be "header", "query" or "cookie"
-        name: API-Key        
   schemas:
     courses:
       type: object
@@ -100,3 +105,7 @@ components:
         id:
           type: string
           format: uuid
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer

@@ -46,7 +46,7 @@ getStarted:
     label: Get Started
     pages:
       - label: Get Started with Ethos Integration
-        pages: 
+        pages:
           - page: get-started/ethos-integration.md
           - page: quick-reference/Customer_Ethos_Integration_quick_reference.md
       - label: Get Started with Experience
@@ -71,43 +71,43 @@ catalog:
           - page: openapi/banner-academic-catalogs.page.yaml/*
       - label: Academic Credentials
         pages:
-        -  page: openapi/banner-academic-credentials.page.yaml/*
+          - page: openapi/banner-academic-credentials.page.yaml/*
       - label: Academic Disciplines
         pages:
-        -  page: openapi/banner-academic-disciplines.page.yaml/*
+          - page: openapi/banner-academic-disciplines.page.yaml/*
       - label: Academic Honors
         pages:
-        -  page: openapi/banner-academic-honors.page.yaml/*
+          - page: openapi/banner-academic-honors.page.yaml/*
       - label: Academic Period Enrollment Statuses
         pages:
-        -  page: openapi/banner-academic-period-enrollment-statuses.page.yaml/*
+          - page: openapi/banner-academic-period-enrollment-statuses.page.yaml/*
       - label: Academic Periods
         pages:
-        -  page: openapi/banner-academic-periods.page.yaml/*
+          - page: openapi/banner-academic-periods.page.yaml/*
       - label: Admission Decision Types
         pages:
-        -  page: openapi/banner-admission-decision-types.page.yaml/*
-      - label: Courses
-        pages:
-          - page: openapi/business/courses.page.yaml/*
+          - page: openapi/banner-admission-decision-types.page.yaml/*
       - label: Persons
         pages:
-        -  page: openapi/persons.page.yaml/*
+          - page: openapi/persons.page.yaml/*
+      - label: Courses
+        pages:
+          - page: openapi/courses.page.yaml/*
       - label: Sections
         pages:
-        -  page: openapi/banner-sections.page.yaml/*
+          - page: openapi/banner-sections.page.yaml/*
       - label: Students
         pages:
-        -  page: openapi/banner-students.page.yaml/*
+          - page: openapi/banner-students.page.yaml/*
       - label: Section Registrations
         pages:
-        -  page: openapi/banner-section-registrations.page.yaml/*
+          - page: openapi/banner-section-registrations.page.yaml/*
       - label: Section Registration Statuses
         pages:
-        -  page: openapi/banner-section-registration-statuses-consolidated.page.yaml/*
+          - page: openapi/banner-section-registration-statuses-consolidated.page.yaml/*
       - label: Vendors
         pages:
-        -  page: custom/dummy2.md
+          - page: openapi/vendors.page.yaml/*
   - group: Business APIs
     expanded: false
     pages:
@@ -125,7 +125,7 @@ catalog:
       #     - page: openapi/business/miscellaneous-transaction.page.yaml/*
       # - label: Name Types
       #   pages:
-      #     - page: penapi/business/name-types.page.yaml/*
+      #     - page: openapi/business/name-types.page.yaml/*
       # - label: Partition Codes
       #   pages:
       #     - page: openapi/business/partition-codes.page.yaml/*

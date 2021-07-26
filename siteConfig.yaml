@@ -28,11 +28,11 @@ logo: ./images/ellucian_full.png
 
 enableToc: true
 oasDefinitions:
-  multiVersion: https://api.redoc.ly/registry/ellucian/persons_courses/V1/bundle/master/openapi.yaml
+  # multiVersion: https://api.redoc.ly/registry/ellucian/persons_courses/V1/bundle/master/openapi.yaml
+  # petstore: ./openapi/petstore.yaml
   bannerAcademicCatalogs: ./openapi/banner-academic-catalogs-6.1.0.yaml
   bannerAcademicCredentials: ./openapi/banner-academic-credentials-6.0.yaml
   bannerAcademicDisciplines: ./openapi/banner-academic-disciplines-15.0.yaml
-  # courses: ./openapi/business/courses.yaml
   persons: ./openapi/persons.yaml
   bannerAcademicHonors: ./openapi/banner-academic-honors-6.0.yaml
   bannerAcademicPeriodEnrollmentStatuses: ./openapi/banner-academic-period-enrollment-statuses-7.0.yaml
@@ -42,6 +42,8 @@ oasDefinitions:
   bannerSectionRegistrationStatuses: ./openapi/banner-section-registration-statuses-consolidated.yaml
   bannerSections: ./openapi/banner-sections-16.0.0.yaml
   bannerStudents: ./openapi/banner-students-16.0.0.yaml
+  courses: ./openapi/courses.yaml
+  vendors: ./openapi/banner-vendors.yaml
   # Business APIs
   admissionApplicationChecklist: ./openapi/business/admission-application-checklist.yaml
   catalogElementFours: ./openapi/business/catalog-element-fours.yaml
@@ -53,8 +55,6 @@ oasDefinitions:
   # religionCodes: ./openapi/business/religion-codes.yaml
   # residenceCodes: ./openapi/business/residence-codes.yaml
   # timeStatusCodes: ./openapi/business/time-status-codes.yaml
-  courses: ./openapi/business/courses.yaml
-  petstore: ./openapi/petstore.yaml
   # add links to definitions in our API registry by using a fully qualified URL.
 stylesheets:
   - https://fonts.googleapis.com/css?family=Roboto:300,400,600,700
