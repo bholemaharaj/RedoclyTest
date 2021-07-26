@@ -23,37 +23,50 @@ import buildEthosIntegration from './api-catalog/images/build_ethos_integration.
 
 export default LandingLayout;
 
-<Jumbotron pb="3.5em" flexDirection="column" alignItems="center" parallaxEffect="true">
+<Jumbotron p={3} flexDirection="column" alignItems="center" parallaxEffect="true">
     <H1>API Catalog</H1>
 </Jumbotron>
+
+
 <SectionHeader>
     <Emphasis>Choose the right type of API for your integration</Emphasis>
 </SectionHeader>
 <Flex flexDirection="column" alignItems="center">
     <img src={buildEthosIntegration} alt='image' />
 </Flex>
+
+
+
 <SectionHeader>
-    <Emphasis>Ellucian Ethos API Types</Emphasis>
+    <Box p={3} m={0} zIndex={2} border="2px solid" backgroundColor="#E6ECEE">
+        <Button to="/developer-portal/api-catalog/ethosapis/" large>
+            <div>Data Model API</div>
+        </Button>
+        <div><h4>The foundation of initial Ethos-enabled integrations</h4></div>
+    </Box>
 </SectionHeader>
+
 <FlexSection justifyContent="space-around" flexWrap="wrap">
-    <WideTile to="/openapi/banner-academic-catalogs/" header="Data Model APIs" textAlign="center">
-        The foundation of initial Ethos-enabled integrations
-    </WideTile>
-</FlexSection>
-<FlexSection justifyContent="space-around" flexWrap="wrap">
-    <WideTile to="" header="Ethos" disableArrow="true" textAlign="center">
+    <WideTile header="Ethos" disableArrow="true" textAlign="center">
         RESTful APIs that integrate elements defined by an Ellucian Ethos Data Model (EEDM) schema.  Ethos APIs offer full CRUD support where appropriate, provide change notifications to Ethos Integration, and generally follow standards and principles as defined here on the Ethos Documentation Site:  <a href="https://resources.elluciancloud.com/bundle/ethos_integration_lrn_getstarted/page/c_define_fundamentals.html%20%22Ethos%20Principles%22\">Ethos Principles</a>
     </WideTile>
-    <WideTile to="" header="Spec-Based" disableArrow="true" textAlign="center">
+    <WideTile header="Spec-Based" disableArrow="true" textAlign="center">
         RESTful APIs that integrate custom entities defined by a customer, with or without a corresponding schema created using <a href="https://resources.elluciancloud.com/bundle/ethos_extend_lrn_get_started/page/c_about_ellucian_ethos_extend.html">Ethos Extend</a> (the application).
     </WideTile>
 </FlexSection>
-<FlexSection justifyContent="space-around" flexWrap="wrap">
-    <WideTile to="/openapi/business/admission-application-checklist/" header="Business APIs" textAlign="center">
-        The next generation of Ethos-enabled integrations
-    </WideTile>
-</FlexSection>
-<FlexSection justifyContent="space-around" flexWrap="wrap">
+
+
+
+<SectionHeader>
+    <Box p={3} m={0} zIndex={2} border="2px solid" backgroundColor="#E6ECEE">
+        <Button to="/developer-portal/api-catalog/businessapis/" large>
+            <div>Business APIs</div>
+        </Button>
+        <div><h4>The next generation of Ethos-enabled integrations</h4></div>
+    </Box>
+</SectionHeader>
+
+<FlexSection justifyContent="space-around" flexWrap="wrap" flexDirection="row">
     <WideTile to="" header="Banner Business APIs" disableArrow="true" textAlign="center">
         Banner Admin API implements and calls the business logic of an administrative page.  The approach here is to wrap an existing Banner Administrative page with an orchestration layer that executes the page logic at runtime and rendering the data in a REST/JSON API instead of a HTML user interface.
     </WideTile>

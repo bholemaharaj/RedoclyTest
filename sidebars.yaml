@@ -64,6 +64,7 @@ catalog:
   #   pages:
   #     - page: openapi/reference.page.yaml/*
   - group: Ethos APIs
+    page: developer-portal/api-catalog/ethosApis.mdx
     expanded: false
     pages:
       - label: Academic Catalogs
@@ -110,6 +111,7 @@ catalog:
           - page: openapi/vendors.page.yaml/*
   - group: Business APIs
     expanded: false
+    page: developer-portal/api-catalog/businessApis.mdx
     pages:
       - label: Admission Application Checklist
         pages:

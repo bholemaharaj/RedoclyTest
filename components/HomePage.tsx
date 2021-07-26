@@ -1,6 +1,7 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
  
+/* Loading Static Query
 export default () => ( 
   <StaticQuery
   query={graphql`
@@ -24,6 +25,7 @@ export default () => (
   } 
   />
 )
+*/
  
 //export default Page
  
@@ -39,8 +41,6 @@ export default () => (
   )
 } */
 
-/* export const Page = ({ data }) => <h3>{JSON.stringify(data, null, 4)}</h3>
-
 export const query = graphql`
 {
   site {
@@ -50,8 +50,14 @@ export const query = graphql`
       description
     }
   }
-}
-` */
+}`
+
+const Page = ({ data }) => <h3>{JSON.stringify(data)}</h3>
+
+
+console.log(Page);
+
+export default Page
 
 
 /* export const Page = () => (

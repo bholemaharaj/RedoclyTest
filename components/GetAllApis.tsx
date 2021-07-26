@@ -1,41 +1,38 @@
 import React from "react"
-import { graphql } from "gatsby"
+import apiCatalog from "./data/apiCatalog.json"
 
-const Result = ({ data }) => <pre>{JSON.stringify(data, null, 4)}</pre>
+export function GetApisByGroup(group){
+  console.log(group);
+  let pages = apiCatalog.data.allSidebar.edges[0].node.pages;
+  let apis = pages.find(o => o.group === group.value).pages;
 
-export const query = graphql`
-  {
-    allSidebar(filter: {name: {eq: "catalog"}}) {
-      edges {
-        node {
-          id
-          name
-          pages {
-            page
-            group
-            expanded
-            label
-            pages {
-              label
-              separator
-              pages {
-                page
-              }
-            }
-          }
-        }
-      }
+  let response = [];
+
+  apis.forEach(element => {
+    let url = element.pages[0].page;
+
+    if(url.includes('.mdx')){
+      url = url.replace(".mdx","");
+      url = "/" + url;
     }
-  }
-`
 
-export function ComponentName({Result}) {
+    else if(url.includes('.md')){
+      url = url.replace(".md","");
+      url = "/" + url;
+    }
 
-  console.log(Result);
+    else if(url.includes('.page.yaml')){
+      url = url.replace(".page.yaml/*","");
+      url = "/" + url;
+    }
 
-  return (
-    <div>
-      {Result}
-    </div>
-  );
+    else if(url.includes('.yaml')){
+      url = url.replace(".yaml/*","");
+      url = "/" + url;
+    }
+    
+    response.push(<a href={url}><ul style={{backgroundColor:'#E6ECEE', marginTop:'0', marginBottom:'1em', paddingTop:'0.5em', height:'2.5em'}} key={element.label}>{element.label}</ul></a>)
+  });
+
+  return <div>{response}</div>;
 }
