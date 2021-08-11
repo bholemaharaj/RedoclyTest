@@ -2,7 +2,7 @@ openapi: 3.0.3
 info:
   title: Persons
   description: Persons API
-  version: 1.0.0
+  version: 12.3.0
 servers:
   - url: https://integrate.elluciancloud.com/api
     description: Ethos Persons API
@@ -42,13 +42,13 @@ paths:
             type: integer
       x-codeSamples:
         - lang: "C#"
-          label: "CSharp"
+          label: "C Sharp"
           source: |
             EthosProxyClient ethosProxyClient = GetEthosProxyClient();
             EthosResponse ethosResponse = null;
             try
             {
-                string resourceName = "student-cohorts";
+                string resourceName = "persons";
                 ethosResponse = await ethosProxyClient.GetAsync( resourceName, string.Empty );
                 string totalCountHdr = ethosResponse.GetHeader( EthosProxyClient.HDR_X_TOTAL_COUNT );
                 Console.WriteLine( "******* Get data for resource example, no paging. *******" );
@@ -65,7 +65,7 @@ paths:
           source: |
             EthosProxyClient ethosProxyClient = getEthosProxyClient();
             try {
-                String resourceName = "student-cohorts";
+                String resourceName = "persons";
                 JsonNode jsonNode = ethosProxyClient.getAsJsonNode(resourceName);
                 System.out.println( "******* doGetResourceAsJsonNodeExample() *******" );
                 System.out.println(String.format("Get data for resource: %s", resourceName));
